@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+UID:7177e90bacf017e6b5c6236657933a521bd7201a
+FN:Peter Molnar
+N:Molnar;Peter;;;
+TEL;TYPE=CELL;"+44":+447592011721
+EMAIL;TYPE=HOME:mail@petermolnar.net
+IMPP:xmpp:mail@petermolnar.net
+URL;VALUE=URI:https://petermolnar.net/
+BDAY:1985-03-27
+END:VCARD

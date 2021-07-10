@@ -1,0 +1,24 @@
+div.ld50_fotok a:link, div.ld50_fotok a:visited {
+	display: block;   
+	width:100px;
+	float:left;
+	background-color: #22252C;
+	border:1px solid #111;
+	padding: 2px;
+	margin-left:2px;
+	margin-right:2px;
+	text-align: center; 
+	text-decoration: none;	
+	margin-bottom:10px;
+}
+	div.ld50_fotok a:hover, div.ld50_fotok a:focus, div.ld50_fotok a:active {
+		background-color: #444;
+	}
+
+	div.ld50_fotok a img {
+		border:1px solid #000;
+	}
+	
+	div.ld50_fotok a.fekvo:link, div.ld50_fotok a.fekvo:visited {
+		width: 150px;
+	}

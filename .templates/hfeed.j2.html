@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head><title>{{feed.name}}</title>
+    <meta charset="utf-8">
+</head>
+<body class="h-feed">
+    <h1 class="p-name"><a class="u-url" href="{{feed.url}}">{{feed.name}}</a></h1>
+{% for entry in entries %}
+    <details class="h-entry" {% if entry.url == entries[0].url %}open{% endif %}>
+    <summary class="p-name">
+        <a class="u-url" href="{{entry.url}}">{{entry.title}}</a>
+    </summary>
+
+    <p><time class="dt-published" datetime="{{entry.published}}">Published: {{entry.published}}</time>
+
+    {% if entry['in-reply-to'] %}
+    <p>This post is a reply to: <a href="{{ entry['in-reply-to'] }}" class="u-in-reply-to">{{ entry['in-reply-to'] }}</a></p>
+    {% endif %}
+
+    {% if entry.summary %}
+    <div class="e-summary">
+        {{entry.summary}}
+    </div>
+    {% endif %}
+
+    {% if entry.image %}
+    {{ entry.image.html }}
+    {% endif %}
+
+    <div class="e-content">
+        {{entry.html}}
+    </div>
+
+    {% if entry.author %}
+    <div class="h-card">
+        by
+        <span class="p-author">{{entry.author.name}}</span> &lt;<a class="u-email" href="mailto:{{entry.author.email}}">{{entry.author.email}}</a>&gt;
+    </div>
+    </details>
+    <hr>
+    {% endif %}
+{% endfor %}
+</body>
+</html>

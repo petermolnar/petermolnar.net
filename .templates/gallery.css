@@ -1,0 +1,51 @@
+h1,
+.p-summary,
+.e-summary {
+  display: none;
+}
+
+.year > div {
+  display: inline-block;
+}
+
+.h-entry {
+  position: relative;
+}
+
+.h-entry .entry-header {
+  position: absolute;
+  bottom: 2.2em;
+  padding: 0.6em;
+  z-index: 999;
+  text-align: center;
+  display: block;
+  width: 100%;
+  background-color: rgba(0,0,0, 0.5);
+  opacity: 0.9;
+  font-size: 0.9em;
+}
+
+.h-entry .entry-header h3 {
+  width: 100%;
+}
+
+@media all and (min-width: 51em) {
+    #main {
+      max-width: 100%;
+      display: flex;
+      flex-wrap:wrap;
+      text-align: center;
+    }
+
+    .h-entry h3 a {
+      color: #f90;
+    }
+
+    figure {
+      width: 23vw;
+    }
+
+    figure img {
+      max-height: 40vh;
+    }
+}

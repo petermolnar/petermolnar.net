@@ -1,0 +1,2799 @@
+{
+    "name": "syndicate my RSS feed",
+    "flow": [
+        {
+            "id": 1,
+            "module": "rss:TriggerNewArticle",
+            "version": 4,
+            "parameters": {
+                "url": "https://petermolnar.net/feed/index.xml",
+                "gzip": true,
+                "include": [],
+                "password": "",
+                "username": "",
+                "maxResults": 2
+            },
+            "mapper": {},
+            "metadata": {
+                "designer": {
+                    "x": -473,
+                    "y": 1208
+                },
+                "parameters": [
+                    {
+                        "name": "url",
+                        "type": "url",
+                        "label": "URL",
+                        "required": true
+                    },
+                    {
+                        "name": "maxResults",
+                        "type": "number",
+                        "label": "Maximum number of returned items",
+                        "required": true
+                    },
+                    {
+                        "name": "username",
+                        "type": "text",
+                        "label": "User name"
+                    },
+                    {
+                        "name": "password",
+                        "type": "text",
+                        "label": "Password"
+                    },
+                    {
+                        "name": "include",
+                        "type": "select",
+                        "label": "Process RSS fields",
+                        "multiple": true,
+                        "validate": {
+                            "enum": [
+                                "google-merchant-center"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "gzip",
+                        "type": "boolean",
+                        "label": "Request compressed content",
+                        "required": true
+                    }
+                ],
+                "interface": [
+                    {
+                        "name": "title",
+                        "type": "text",
+                        "label": "Title"
+                    },
+                    {
+                        "name": "description",
+                        "type": "text",
+                        "label": "Description"
+                    },
+                    {
+                        "name": "summary",
+                        "type": "text",
+                        "label": "Summary"
+                    },
+                    {
+                        "name": "author",
+                        "type": "text",
+                        "label": "Author"
+                    },
+                    {
+                        "name": "url",
+                        "type": "url",
+                        "label": "URL"
+                    },
+                    {
+                        "name": "dateUpdated",
+                        "type": "date",
+                        "label": "Date updated"
+                    },
+                    {
+                        "name": "dateCreated",
+                        "type": "date",
+                        "label": "Date created"
+                    },
+                    {
+                        "name": "comments",
+                        "type": "url",
+                        "label": "Comments"
+                    },
+                    {
+                        "name": "image",
+                        "spec": [
+                            {
+                                "name": "title",
+                                "type": "text",
+                                "label": "Name"
+                            },
+                            {
+                                "name": "url",
+                                "type": "url",
+                                "label": "URL"
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Image"
+                    },
+                    {
+                        "name": "categories",
+                        "spec": {
+                            "type": "text"
+                        },
+                        "type": "array",
+                        "label": "Categories"
+                    },
+                    {
+                        "name": "source",
+                        "spec": [
+                            {
+                                "name": "title",
+                                "type": "text",
+                                "label": "Name"
+                            },
+                            {
+                                "name": "url",
+                                "type": "url",
+                                "label": "URL"
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Source"
+                    },
+                    {
+                        "name": "enclosures",
+                        "spec": [
+                            {
+                                "name": "url",
+                                "type": "url",
+                                "label": "URL"
+                            },
+                            {
+                                "name": "type",
+                                "type": "text",
+                                "label": "Type"
+                            },
+                            {
+                                "name": "length",
+                                "type": "number",
+                                "label": "Length"
+                            }
+                        ],
+                        "type": "array",
+                        "label": "Enclosures"
+                    },
+                    {
+                        "help": "Other RSS fields. All values are in text format.",
+                        "name": "rssFields",
+                        "spec": [
+                            {
+                                "name": "title",
+                                "type": "text",
+                                "label": "title"
+                            },
+                            {
+                                "name": "guid",
+                                "type": "text",
+                                "label": "guid"
+                            },
+                            {
+                                "name": "link",
+                                "type": "text",
+                                "label": "link"
+                            },
+                            {
+                                "name": "pubdate",
+                                "type": "text",
+                                "label": "pubdate"
+                            },
+                            {
+                                "name": "category",
+                                "type": "text",
+                                "label": "category"
+                            },
+                            {
+                                "name": "description",
+                                "type": "text",
+                                "label": "description"
+                            },
+                            {
+                                "name": "enclosure",
+                                "type": "text",
+                                "label": "enclosure"
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "RSS fields"
+                    }
+                ],
+                "advanced": true
+            }
+        },
+        {
+            "id": 5,
+            "module": "builtin:BasicRouter",
+            "version": 1,
+            "mapper": null,
+            "metadata": {
+                "designer": {
+                    "x": 300,
+                    "y": 1200
+                }
+            },
+            "routes": [
+                {
+                    "flow": [
+                        {
+                            "id": 14,
+                            "module": "builtin:BasicRouter",
+                            "version": 1,
+                            "filter": {
+                                "name": "",
+                                "conditions": [
+                                    [
+                                        {
+                                            "a": "{{1.categories}}",
+                                            "b": "note",
+                                            "o": "array:notcontain"
+                                        },
+                                        {
+                                            "a": "{{1.enclosures}}",
+                                            "b": "0",
+                                            "o": "array:equal"
+                                        }
+                                    ]
+                                ]
+                            },
+                            "mapper": null,
+                            "metadata": {
+                                "designer": {
+                                    "x": 298,
+                                    "y": 821,
+                                    "name": "everything except notes and photos"
+                                }
+                            },
+                            "routes": [
+                                {
+                                    "flow": [
+                                        {
+                                            "id": 9,
+                                            "module": "email:ActionSendEmail",
+                                            "version": 7,
+                                            "parameters": {
+                                                "account": 1284609,
+                                                "saveAfterSent": false
+                                            },
+                                            "mapper": {
+                                                "cc": [],
+                                                "to": [
+                                                    "petermolnarnet@googlegroups.com"
+                                                ],
+                                                "bcc": [],
+                                                "from": "",
+                                                "html": "{{1.description}}\n\n<p>`{{1.title}}` was originally posted to: <a href=\"{{1.url}}\">{{1.url}}</a></p>",
+                                                "sender": "",
+                                                "headers": [],
+                                                "replyTo": "mail@petermolnar.net",
+                                                "subject": "[petermolnar.net] {{1.title}}",
+                                                "priority": "normal",
+                                                "inReplyTo": "",
+                                                "references": [],
+                                                "attachments": [],
+                                                "contentType": "html"
+                                            },
+                                            "metadata": {
+                                                "designer": {
+                                                    "x": 299,
+                                                    "y": 519,
+                                                    "name": "send to google groups"
+                                                },
+                                                "restore": {
+                                                    "cc": {
+                                                        "mode": "chose",
+                                                        "items": []
+                                                    },
+                                                    "to": {
+                                                        "mode": "chose",
+                                                        "items": [
+                                                            "undefined"
+                                                        ]
+                                                    },
+                                                    "bcc": {
+                                                        "mode": "chose",
+                                                        "items": []
+                                                    },
+                                                    "account": {
+                                                        "label": "integromat@petermolnar.net (SMTP integromat@petermolnar.net)"
+                                                    },
+                                                    "headers": {
+                                                        "items": []
+                                                    },
+                                                    "priority": {
+                                                        "label": "Normal"
+                                                    },
+                                                    "references": {
+                                                        "mode": "chose",
+                                                        "items": []
+                                                    },
+                                                    "attachments": {
+                                                        "mode": "chose",
+                                                        "items": []
+                                                    },
+                                                    "contentType": {
+                                                        "label": "HTML"
+                                                    },
+                                                    "saveAfterSent": {
+                                                        "label": "No"
+                                                    }
+                                                },
+                                                "parameters": [
+                                                    {
+                                                        "name": "account",
+                                                        "type": "account",
+                                                        "label": "Connection",
+                                                        "required": true
+                                                    },
+                                                    {
+                                                        "name": "saveAfterSent",
+                                                        "type": "select",
+                                                        "label": "Save message after sending",
+                                                        "required": true,
+                                                        "validate": {
+                                                            "enum": [
+                                                                true,
+                                                                false
+                                                            ]
+                                                        }
+                                                    }
+                                                ],
+                                                "expect": [
+                                                    {
+                                                        "name": "to",
+                                                        "spec": {
+                                                            "name": "email",
+                                                            "type": "email",
+                                                            "label": "Email address",
+                                                            "required": true
+                                                        },
+                                                        "type": "array",
+                                                        "label": "To",
+                                                        "labels": {
+                                                            "add": "Add a recipient",
+                                                            "edit": "Edit a recipient"
+                                                        },
+                                                        "required": true
+                                                    },
+                                                    {
+                                                        "name": "subject",
+                                                        "type": "text",
+                                                        "label": "Subject"
+                                                    },
+                                                    {
+                                                        "name": "contentType",
+                                                        "type": "select",
+                                                        "label": "Content Type",
+                                                        "required": true,
+                                                        "validate": {
+                                                            "enum": [
+                                                                "html",
+                                                                "text"
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "name": "attachments",
+                                                        "spec": [
+                                                            {
+                                                                "name": "fileName",
+                                                                "type": "filename",
+                                                                "label": "File name",
+                                                                "required": true,
+                                                                "semantic": "file:name"
+                                                            },
+                                                            {
+                                                                "name": "data",
+                                                                "type": "buffer",
+                                                                "label": "Data",
+                                                                "required": true,
+                                                                "semantic": "file:data"
+                                                            },
+                                                            {
+                                                                "name": "cid",
+                                                                "type": "text",
+                                                                "label": "Content-ID"
+                                                            }
+                                                        ],
+                                                        "type": "array",
+                                                        "label": "Attachments",
+                                                        "labels": {
+                                                            "add": "Add an attachment",
+                                                            "edit": "Edit an attachment"
+                                                        }
+                                                    },
+                                                    {
+                                                        "name": "cc",
+                                                        "spec": {
+                                                            "name": "email",
+                                                            "type": "email",
+                                                            "label": "Email address"
+                                                        },
+                                                        "type": "array",
+                                                        "label": "Copy recipient",
+                                                        "labels": {
+                                                            "add": "Add a copy recipient",
+                                                            "edit": "Edit a copy recipient"
+                                                        }
+                                                    },
+                                                    {
+                                                        "name": "bcc",
+                                                        "spec": {
+                                                            "name": "email",
+                                                            "type": "email",
+                                                            "label": "Email address"
+                                                        },
+                                                        "type": "array",
+                                                        "label": "Blind copy recipient",
+                                                        "labels": {
+                                                            "add": "Add a blind copy recipient",
+                                                            "edit": "Edit a blind copy recipient"
+                                                        }
+                                                    },
+                                                    {
+                                                        "name": "from",
+                                                        "type": "text",
+                                                        "label": "From"
+                                                    },
+                                                    {
+                                                        "name": "sender",
+                                                        "type": "text",
+                                                        "label": "Sender"
+                                                    },
+                                                    {
+                                                        "name": "replyTo",
+                                                        "type": "text",
+                                                        "label": "Reply-To"
+                                                    },
+                                                    {
+                                                        "name": "inReplyTo",
+                                                        "type": "text",
+                                                        "label": "In-Reply-To"
+                                                    },
+                                                    {
+                                                        "name": "references",
+                                                        "spec": {
+                                                            "type": "text",
+                                                            "label": "Reference",
+                                                            "required": true
+                                                        },
+                                                        "type": "array",
+                                                        "label": "References"
+                                                    },
+                                                    {
+                                                        "name": "priority",
+                                                        "type": "select",
+                                                        "label": "Priority",
+                                                        "validate": {
+                                                            "enum": [
+                                                                "high",
+                                                                "normal",
+                                                                "low"
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "name": "headers",
+                                                        "spec": [
+                                                            {
+                                                                "name": "key",
+                                                                "type": "text",
+                                                                "label": "Key",
+                                                                "required": true
+                                                            },
+                                                            {
+                                                                "name": "value",
+                                                                "type": "text",
+                                                                "label": "Value",
+                                                                "required": true
+                                                            }
+                                                        ],
+                                                        "type": "array",
+                                                        "label": "Headers"
+                                                    },
+                                                    {
+                                                        "name": "html",
+                                                        "type": "text",
+                                                        "label": "Content"
+                                                    }
+                                                ],
+                                                "advanced": true
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "flow": [
+                        {
+                            "id": 16,
+                            "module": "builtin:BasicRouter",
+                            "version": 1,
+                            "filter": {
+                                "name": "",
+                                "conditions": [
+                                    [
+                                        {
+                                            "a": "{{1.enclosures}}",
+                                            "b": "0",
+                                            "o": "array:greater"
+                                        }
+                                    ]
+                                ]
+                            },
+                            "mapper": null,
+                            "metadata": {
+                                "designer": {
+                                    "x": 607,
+                                    "y": 940,
+                                    "name": "route only for photos"
+                                }
+                            },
+                            "routes": [
+                                {
+                                    "flow": [
+                                        {
+                                            "id": 4,
+                                            "module": "http:ActionGetFile",
+                                            "version": 3,
+                                            "parameters": {
+                                                "handleErrors": false
+                                            },
+                                            "mapper": {
+                                                "url": "{{1.enclosures[].url}}",
+                                                "method": "get",
+                                                "shareCookies": false
+                                            },
+                                            "metadata": {
+                                                "designer": {
+                                                    "x": 844,
+                                                    "y": 754,
+                                                    "name": "get enclosure image"
+                                                },
+                                                "parameters": [
+                                                    {
+                                                        "name": "handleErrors",
+                                                        "type": "boolean",
+                                                        "label": "Evaluate all states as errors (except for 2xx and 3xx )",
+                                                        "required": true
+                                                    }
+                                                ],
+                                                "expect": [
+                                                    {
+                                                        "name": "url",
+                                                        "type": "url",
+                                                        "label": "URL",
+                                                        "required": true
+                                                    },
+                                                    {
+                                                        "name": "method",
+                                                        "type": "hidden",
+                                                        "label": "Method"
+                                                    },
+                                                    {
+                                                        "name": "shareCookies",
+                                                        "type": "boolean",
+                                                        "label": "Share cookies with other HTTP modules",
+                                                        "required": true
+                                                    }
+                                                ],
+                                                "advanced": true
+                                            }
+                                        },
+                                        {
+                                            "id": 11,
+                                            "module": "builtin:BasicRouter",
+                                            "version": 1,
+                                            "mapper": null,
+                                            "metadata": {
+                                                "designer": {
+                                                    "x": 1094,
+                                                    "y": 588,
+                                                    "name": "distribute photo"
+                                                }
+                                            },
+                                            "routes": [
+                                                {
+                                                    "flow": [
+                                                        {
+                                                            "id": 12,
+                                                            "module": "email:ActionSendEmail",
+                                                            "version": 7,
+                                                            "parameters": {
+                                                                "account": 1284609,
+                                                                "saveAfterSent": false
+                                                            },
+                                                            "mapper": {
+                                                                "cc": [],
+                                                                "to": [
+                                                                    "petermolnarnet@googlegroups.com"
+                                                                ],
+                                                                "bcc": [],
+                                                                "from": "",
+                                                                "html": "{{1.description}}\n\n<p>`{{1.title}}` was originally posted to: <a href=\"{{1.url}}\">{{1.url}}</a></p>",
+                                                                "sender": "",
+                                                                "headers": [],
+                                                                "replyTo": "mail@petermolnar.net",
+                                                                "subject": "[petermolnar.net] {{1.title}}",
+                                                                "priority": "normal",
+                                                                "inReplyTo": "",
+                                                                "references": [],
+                                                                "attachments": [
+                                                                    {
+                                                                        "cid": "",
+                                                                        "data": "{{4.data}}",
+                                                                        "fileName": "{{4.fileName}}"
+                                                                    }
+                                                                ],
+                                                                "contentType": "html"
+                                                            },
+                                                            "metadata": {
+                                                                "designer": {
+                                                                    "x": 1090,
+                                                                    "y": 273,
+                                                                    "name": "send to google groups with attached image"
+                                                                },
+                                                                "restore": {
+                                                                    "cc": {
+                                                                        "mode": "chose",
+                                                                        "items": []
+                                                                    },
+                                                                    "to": {
+                                                                        "mode": "chose",
+                                                                        "items": [
+                                                                            "undefined"
+                                                                        ]
+                                                                    },
+                                                                    "bcc": {
+                                                                        "mode": "chose",
+                                                                        "items": []
+                                                                    },
+                                                                    "account": {
+                                                                        "label": "integromat@petermolnar.net (SMTP integromat@petermolnar.net)"
+                                                                    },
+                                                                    "headers": {
+                                                                        "items": []
+                                                                    },
+                                                                    "priority": {
+                                                                        "label": "Normal"
+                                                                    },
+                                                                    "references": {
+                                                                        "mode": "chose",
+                                                                        "items": []
+                                                                    },
+                                                                    "attachments": {
+                                                                        "mode": "chose",
+                                                                        "items": [
+                                                                            "undefined"
+                                                                        ]
+                                                                    },
+                                                                    "contentType": {
+                                                                        "label": "HTML"
+                                                                    },
+                                                                    "saveAfterSent": {
+                                                                        "label": "No"
+                                                                    }
+                                                                },
+                                                                "parameters": [
+                                                                    {
+                                                                        "name": "account",
+                                                                        "type": "account",
+                                                                        "label": "Connection",
+                                                                        "required": true
+                                                                    },
+                                                                    {
+                                                                        "name": "saveAfterSent",
+                                                                        "type": "select",
+                                                                        "label": "Save message after sending",
+                                                                        "required": true,
+                                                                        "validate": {
+                                                                            "enum": [
+                                                                                true,
+                                                                                false
+                                                                            ]
+                                                                        }
+                                                                    }
+                                                                ],
+                                                                "expect": [
+                                                                    {
+                                                                        "name": "to",
+                                                                        "spec": {
+                                                                            "name": "email",
+                                                                            "type": "email",
+                                                                            "label": "Email address",
+                                                                            "required": true
+                                                                        },
+                                                                        "type": "array",
+                                                                        "label": "To",
+                                                                        "labels": {
+                                                                            "add": "Add a recipient",
+                                                                            "edit": "Edit a recipient"
+                                                                        },
+                                                                        "required": true
+                                                                    },
+                                                                    {
+                                                                        "name": "subject",
+                                                                        "type": "text",
+                                                                        "label": "Subject"
+                                                                    },
+                                                                    {
+                                                                        "name": "contentType",
+                                                                        "type": "select",
+                                                                        "label": "Content Type",
+                                                                        "required": true,
+                                                                        "validate": {
+                                                                            "enum": [
+                                                                                "html",
+                                                                                "text"
+                                                                            ]
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "name": "attachments",
+                                                                        "spec": [
+                                                                            {
+                                                                                "name": "fileName",
+                                                                                "type": "filename",
+                                                                                "label": "File name",
+                                                                                "required": true,
+                                                                                "semantic": "file:name"
+                                                                            },
+                                                                            {
+                                                                                "name": "data",
+                                                                                "type": "buffer",
+                                                                                "label": "Data",
+                                                                                "required": true,
+                                                                                "semantic": "file:data"
+                                                                            },
+                                                                            {
+                                                                                "name": "cid",
+                                                                                "type": "text",
+                                                                                "label": "Content-ID"
+                                                                            }
+                                                                        ],
+                                                                        "type": "array",
+                                                                        "label": "Attachments",
+                                                                        "labels": {
+                                                                            "add": "Add an attachment",
+                                                                            "edit": "Edit an attachment"
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "name": "cc",
+                                                                        "spec": {
+                                                                            "name": "email",
+                                                                            "type": "email",
+                                                                            "label": "Email address"
+                                                                        },
+                                                                        "type": "array",
+                                                                        "label": "Copy recipient",
+                                                                        "labels": {
+                                                                            "add": "Add a copy recipient",
+                                                                            "edit": "Edit a copy recipient"
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "name": "bcc",
+                                                                        "spec": {
+                                                                            "name": "email",
+                                                                            "type": "email",
+                                                                            "label": "Email address"
+                                                                        },
+                                                                        "type": "array",
+                                                                        "label": "Blind copy recipient",
+                                                                        "labels": {
+                                                                            "add": "Add a blind copy recipient",
+                                                                            "edit": "Edit a blind copy recipient"
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "name": "from",
+                                                                        "type": "text",
+                                                                        "label": "From"
+                                                                    },
+                                                                    {
+                                                                        "name": "sender",
+                                                                        "type": "text",
+                                                                        "label": "Sender"
+                                                                    },
+                                                                    {
+                                                                        "name": "replyTo",
+                                                                        "type": "text",
+                                                                        "label": "Reply-To"
+                                                                    },
+                                                                    {
+                                                                        "name": "inReplyTo",
+                                                                        "type": "text",
+                                                                        "label": "In-Reply-To"
+                                                                    },
+                                                                    {
+                                                                        "name": "references",
+                                                                        "spec": {
+                                                                            "type": "text",
+                                                                            "label": "Reference",
+                                                                            "required": true
+                                                                        },
+                                                                        "type": "array",
+                                                                        "label": "References"
+                                                                    },
+                                                                    {
+                                                                        "name": "priority",
+                                                                        "type": "select",
+                                                                        "label": "Priority",
+                                                                        "validate": {
+                                                                            "enum": [
+                                                                                "high",
+                                                                                "normal",
+                                                                                "low"
+                                                                            ]
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "name": "headers",
+                                                                        "spec": [
+                                                                            {
+                                                                                "name": "key",
+                                                                                "type": "text",
+                                                                                "label": "Key",
+                                                                                "required": true
+                                                                            },
+                                                                            {
+                                                                                "name": "value",
+                                                                                "type": "text",
+                                                                                "label": "Value",
+                                                                                "required": true
+                                                                            }
+                                                                        ],
+                                                                        "type": "array",
+                                                                        "label": "Headers"
+                                                                    },
+                                                                    {
+                                                                        "name": "html",
+                                                                        "type": "text",
+                                                                        "label": "Content"
+                                                                    }
+                                                                ],
+                                                                "advanced": true
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "flow": [
+                                                        {
+                                                            "id": 6,
+                                                            "module": "flickr:ActionUploadPhoto",
+                                                            "version": 1,
+                                                            "parameters": {
+                                                                "account": 1262181
+                                                            },
+                                                            "mapper": {
+                                                                "data": "{{4.data}}",
+                                                                "tags": [
+                                                                    "{{1.categories}}"
+                                                                ],
+                                                                "title": "{{1.title}}",
+                                                                "hidden": false,
+                                                                "privacy": "public",
+                                                                "fileName": "{{4.fileName}}",
+                                                                "photosetId": "",
+                                                                "contentType": "photo",
+                                                                "description": "{{1.description}}\n\n(Originally published at: <a href=\"{{1.url}}\">{{1.url}}</a>)",
+                                                                "safetyLevel": "safe"
+                                                            },
+                                                            "metadata": {
+                                                                "designer": {
+                                                                    "x": 1396,
+                                                                    "y": 588,
+                                                                    "name": "upload photo to flickr"
+                                                                },
+                                                                "restore": {
+                                                                    "tags": {
+                                                                        "items": [
+                                                                            "undefined"
+                                                                        ]
+                                                                    },
+                                                                    "hidden": {
+                                                                        "mode": "chose"
+                                                                    },
+                                                                    "account": {
+                                                                        "label": "petemolnareu (petermolnarnet)"
+                                                                    },
+                                                                    "privacy": {
+                                                                        "mode": "chose",
+                                                                        "label": "Public"
+                                                                    },
+                                                                    "photosetId": {
+                                                                        "mode": "chose",
+                                                                        "label": ""
+                                                                    },
+                                                                    "contentType": {
+                                                                        "mode": "chose",
+                                                                        "label": "Photo"
+                                                                    },
+                                                                    "safetyLevel": {
+                                                                        "mode": "chose",
+                                                                        "label": "Safe"
+                                                                    }
+                                                                },
+                                                                "parameters": [
+                                                                    {
+                                                                        "name": "account",
+                                                                        "type": "account",
+                                                                        "label": "Connection",
+                                                                        "required": true
+                                                                    }
+                                                                ],
+                                                                "expect": [
+                                                                    {
+                                                                        "mean": "name",
+                                                                        "name": "fileName",
+                                                                        "type": "filename",
+                                                                        "label": "File name",
+                                                                        "required": true
+                                                                    },
+                                                                    {
+                                                                        "mean": "data",
+                                                                        "name": "data",
+                                                                        "type": "buffer",
+                                                                        "label": "Data",
+                                                                        "codepage": "binary",
+                                                                        "required": true
+                                                                    },
+                                                                    {
+                                                                        "name": "privacy",
+                                                                        "type": "select",
+                                                                        "label": "Privacy",
+                                                                        "required": true,
+                                                                        "validate": {
+                                                                            "enum": [
+                                                                                "public",
+                                                                                "friendsAndFamily",
+                                                                                "friends",
+                                                                                "family"
+                                                                            ]
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "name": "safetyLevel",
+                                                                        "type": "select",
+                                                                        "label": "Safety level",
+                                                                        "required": true,
+                                                                        "validate": {
+                                                                            "enum": [
+                                                                                "safe",
+                                                                                "moderate",
+                                                                                "restricted"
+                                                                            ]
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "name": "contentType",
+                                                                        "type": "select",
+                                                                        "label": "Content type of the photo",
+                                                                        "required": true,
+                                                                        "validate": {
+                                                                            "enum": [
+                                                                                "photo",
+                                                                                "screenshot",
+                                                                                "other"
+                                                                            ]
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "name": "title",
+                                                                        "type": "text",
+                                                                        "label": "Title"
+                                                                    },
+                                                                    {
+                                                                        "name": "description",
+                                                                        "type": "text",
+                                                                        "label": "Description"
+                                                                    },
+                                                                    {
+                                                                        "name": "tags",
+                                                                        "spec": {
+                                                                            "name": " ",
+                                                                            "type": "text",
+                                                                            "label": "Tag"
+                                                                        },
+                                                                        "type": "array",
+                                                                        "label": "Tags",
+                                                                        "labels": {
+                                                                            "add": "Add a tag",
+                                                                            "edit": "Edit a tag"
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "name": "hidden",
+                                                                        "type": "boolean",
+                                                                        "label": "Hide from public searches",
+                                                                        "required": true
+                                                                    },
+                                                                    {
+                                                                        "name": "photosetId",
+                                                                        "type": "select",
+                                                                        "label": "Photoset"
+                                                                    }
+                                                                ],
+                                                                "advanced": true
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "flow": [
+                        {
+                            "id": 17,
+                            "module": "android:SendNotification",
+                            "version": 1,
+                            "parameters": {
+                                "device": 414117
+                            },
+                            "mapper": {
+                                "url": "{{1.url}}",
+                                "body": "{{1.url}}",
+                                "title": "[petermolnar.net] new RSS item",
+                                "collapsible": false,
+                                "notification_action": "open_url"
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": -53,
+                                    "y": 1476,
+                                    "name": "notify me about the run"
+                                },
+                                "restore": {
+                                    "device": {
+                                        "label": "p-motoe5"
+                                    },
+                                    "notification_action": {
+                                        "label": "Open URL"
+                                    }
+                                },
+                                "parameters": [
+                                    {
+                                        "name": "device",
+                                        "type": "device",
+                                        "label": "Device",
+                                        "required": true
+                                    }
+                                ],
+                                "expect": [
+                                    {
+                                        "name": "title",
+                                        "type": "text",
+                                        "label": "Title",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "body",
+                                        "type": "text",
+                                        "label": "Body"
+                                    },
+                                    {
+                                        "name": "notification_action",
+                                        "type": "select",
+                                        "label": "Click action",
+                                        "validate": {
+                                            "enum": [
+                                                "open_url"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "collapsible",
+                                        "type": "boolean",
+                                        "label": "Collapse push notifications",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "url",
+                                        "type": "url",
+                                        "label": "URL",
+                                        "required": true
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "flow": [
+                        {
+                            "id": 19,
+                            "module": "http:ActionSendData",
+                            "version": 3,
+                            "parameters": {
+                                "handleErrors": false
+                            },
+                            "mapper": {
+                                "ca": "",
+                                "qs": [],
+                                "url": "{{1.url}}",
+                                "gzip": true,
+                                "method": "get",
+                                "headers": [],
+                                "timeout": "",
+                                "authPass": "",
+                                "authUser": "",
+                                "bodyType": "",
+                                "shareCookies": false,
+                                "parseResponse": false,
+                                "followRedirect": true,
+                                "useQuerystring": false,
+                                "followAllRedirects": false,
+                                "rejectUnauthorized": true
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 805,
+                                    "y": 1203,
+                                    "name": "GET the article"
+                                },
+                                "restore": {
+                                    "qs": {
+                                        "mode": "chose",
+                                        "items": []
+                                    },
+                                    "method": {
+                                        "mode": "chose",
+                                        "label": "GET"
+                                    },
+                                    "headers": {
+                                        "mode": "chose",
+                                        "items": []
+                                    },
+                                    "bodyType": {
+                                        "label": ""
+                                    }
+                                },
+                                "parameters": [
+                                    {
+                                        "name": "handleErrors",
+                                        "type": "boolean",
+                                        "label": "Evaluate all states as errors (except for 2xx and 3xx )",
+                                        "required": true
+                                    }
+                                ],
+                                "expect": [
+                                    {
+                                        "name": "url",
+                                        "type": "url",
+                                        "label": "URL",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "method",
+                                        "type": "select",
+                                        "label": "Method",
+                                        "required": true,
+                                        "validate": {
+                                            "enum": [
+                                                "get",
+                                                "head",
+                                                "post",
+                                                "put",
+                                                "patch",
+                                                "delete"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "headers",
+                                        "spec": [
+                                            {
+                                                "name": "name",
+                                                "type": "text",
+                                                "label": "Name",
+                                                "required": true
+                                            },
+                                            {
+                                                "name": "value",
+                                                "type": "text",
+                                                "label": "Value"
+                                            }
+                                        ],
+                                        "type": "array",
+                                        "label": "Headers",
+                                        "labels": {
+                                            "add": "Add a header",
+                                            "edit": "Edit a header"
+                                        }
+                                    },
+                                    {
+                                        "name": "qs",
+                                        "spec": [
+                                            {
+                                                "name": "name",
+                                                "type": "text",
+                                                "label": "Name",
+                                                "required": true
+                                            },
+                                            {
+                                                "name": "value",
+                                                "type": "text",
+                                                "label": "Value"
+                                            }
+                                        ],
+                                        "type": "array",
+                                        "label": "Query String",
+                                        "labels": {
+                                            "add": "Add parameter",
+                                            "edit": "Edit parameter"
+                                        }
+                                    },
+                                    {
+                                        "name": "bodyType",
+                                        "type": "select",
+                                        "label": "Body type",
+                                        "validate": {
+                                            "enum": [
+                                                "raw",
+                                                "x_www_form_urlencoded",
+                                                "multipart_form_data"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "parseResponse",
+                                        "type": "boolean",
+                                        "label": "Parse response",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "authUser",
+                                        "type": "text",
+                                        "label": "User name"
+                                    },
+                                    {
+                                        "name": "authPass",
+                                        "type": "password",
+                                        "label": "Password"
+                                    },
+                                    {
+                                        "name": "timeout",
+                                        "type": "uinteger",
+                                        "label": "Timeout",
+                                        "validate": {
+                                            "max": 300,
+                                            "min": 1
+                                        }
+                                    },
+                                    {
+                                        "name": "shareCookies",
+                                        "type": "boolean",
+                                        "label": "Share cookies with other HTTP modules",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "ca",
+                                        "type": "cert",
+                                        "label": "Self-signed certificate",
+                                        "multiline": true
+                                    },
+                                    {
+                                        "name": "rejectUnauthorized",
+                                        "type": "boolean",
+                                        "label": "Reject connections that are using unverified (self-signed) certificates",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "followRedirect",
+                                        "type": "boolean",
+                                        "label": "Follow redirect",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "useQuerystring",
+                                        "type": "boolean",
+                                        "label": "Disable serialization of multiple same query string keys as arrays",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "gzip",
+                                        "type": "boolean",
+                                        "label": "Request compressed content",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "followAllRedirects",
+                                        "type": "boolean",
+                                        "label": "Follow all redirect",
+                                        "required": true
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "id": 24,
+                            "module": "regexp:Parser",
+                            "version": 1,
+                            "parameters": {
+                                "global": false,
+                                "pattern": "(<article[^>]+?class=\"[^\"]*?h-entry[^\"]*?\"[^>]*?>(?:.|\\n)+<\\/article>)",
+                                "multiline": true,
+                                "sensitive": false,
+                                "singleline": false,
+                                "continueWhenNoRes": false
+                            },
+                            "mapper": {
+                                "text": "{{19.data}}"
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 1120,
+                                    "y": 1199,
+                                    "name": "find the h-entry"
+                                },
+                                "parameters": [
+                                    {
+                                        "name": "pattern",
+                                        "type": "text",
+                                        "label": "Pattern",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "global",
+                                        "type": "boolean",
+                                        "label": "Global match",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "sensitive",
+                                        "type": "boolean",
+                                        "label": "Case sensitive",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "multiline",
+                                        "type": "boolean",
+                                        "label": "Multiline",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "singleline",
+                                        "type": "boolean",
+                                        "label": "Singleline",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "continueWhenNoRes",
+                                        "type": "boolean",
+                                        "label": "Continue the execution of the route even if the module finds no matches",
+                                        "required": true
+                                    }
+                                ],
+                                "expect": [
+                                    {
+                                        "name": "text",
+                                        "type": "text",
+                                        "label": "Text"
+                                    }
+                                ],
+                                "interface": [
+                                    {
+                                        "name": "$1",
+                                        "type": "text",
+                                        "label": "$1"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "id": 20,
+                            "module": "regexp:HTMLParser",
+                            "version": 1,
+                            "parameters": {
+                                "continueWhenNoRes": false
+                            },
+                            "mapper": {
+                                "html": "{{24.`$1`}}",
+                                "elementType": "a"
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 1405,
+                                    "y": 1196,
+                                    "name": "find all links within the h-entry"
+                                },
+                                "restore": {
+                                    "elementType": {
+                                        "label": "Link (a)"
+                                    }
+                                },
+                                "parameters": [
+                                    {
+                                        "name": "continueWhenNoRes",
+                                        "type": "boolean",
+                                        "label": "Continue the execution of the route even if the module finds no matches",
+                                        "required": true
+                                    }
+                                ],
+                                "expect": [
+                                    {
+                                        "name": "elementType",
+                                        "type": "select",
+                                        "label": "Element type",
+                                        "required": true,
+                                        "validate": {
+                                            "enum": [
+                                                "img",
+                                                "a",
+                                                "iframe"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "html",
+                                        "type": "text",
+                                        "label": "HTML"
+                                    }
+                                ],
+                                "interface": [
+                                    {
+                                        "name": "element",
+                                        "type": "text",
+                                        "label": "Element"
+                                    },
+                                    {
+                                        "name": "innerContent",
+                                        "type": "text",
+                                        "label": "Inner content"
+                                    },
+                                    {
+                                        "name": "attrs",
+                                        "spec": [
+                                            {
+                                                "name": "href",
+                                                "type": "text",
+                                                "label": "href"
+                                            },
+                                            {
+                                                "name": "rel",
+                                                "type": "text",
+                                                "label": "rel"
+                                            },
+                                            {
+                                                "name": "target",
+                                                "type": "text",
+                                                "label": "target"
+                                            }
+                                        ],
+                                        "type": "collection",
+                                        "label": "Attributes"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "id": 39,
+                            "module": "builtin:BasicFeeder",
+                            "version": 1,
+                            "parameters": {},
+                            "mapper": {
+                                "array": "{{20.element}}"
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 1693,
+                                    "y": 1191
+                                },
+                                "restore": {
+                                    "array": {
+                                        "mode": "edit"
+                                    }
+                                },
+                                "expect": [
+                                    {
+                                        "mode": "edit",
+                                        "name": "array",
+                                        "spec": [],
+                                        "type": "array",
+                                        "label": "Array"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "id": 37,
+                            "module": "builtin:BasicRouter",
+                            "version": 1,
+                            "filter": {
+                                "name": "find the reply-to URL only, if any",
+                                "conditions": [
+                                    [
+                                        {
+                                            "a": "{{20.attrs.class}}",
+                                            "b": "u-in-reply-to",
+                                            "o": "text:contain"
+                                        }
+                                    ]
+                                ]
+                            },
+                            "mapper": null,
+                            "metadata": {
+                                "designer": {
+                                    "x": 2032,
+                                    "y": 1191
+                                }
+                            },
+                            "routes": [
+                                {
+                                    "flow": [
+                                        {
+                                            "id": 22,
+                                            "module": "http:ActionSendData",
+                                            "version": 3,
+                                            "parameters": {
+                                                "handleErrors": false
+                                            },
+                                            "mapper": {
+                                                "ca": "",
+                                                "qs": [],
+                                                "url": "https://telegraph.p3k.io/webmention",
+                                                "gzip": true,
+                                                "method": "post",
+                                                "headers": [],
+                                                "timeout": "",
+                                                "authPass": "",
+                                                "authUser": "",
+                                                "bodyType": "x_www_form_urlencoded",
+                                                "formFields": [
+                                                    {
+                                                        "key": "source",
+                                                        "value": "{{1.url}}"
+                                                    },
+                                                    {
+                                                        "key": "target",
+                                                        "value": "{{20.attrs.href}}"
+                                                    },
+                                                    {
+                                                        "key": "token",
+                                                        "value": "83afe8b4b261a9f2e1520f67fe6d89288ef056b502bf589938"
+                                                    }
+                                                ],
+                                                "shareCookies": false,
+                                                "parseResponse": true,
+                                                "followRedirect": true,
+                                                "useQuerystring": false,
+                                                "followAllRedirects": false,
+                                                "rejectUnauthorized": true
+                                            },
+                                            "metadata": {
+                                                "designer": {
+                                                    "x": 2356,
+                                                    "y": 1191,
+                                                    "name": "send webmentions through telegraph"
+                                                },
+                                                "restore": {
+                                                    "qs": {
+                                                        "mode": "chose",
+                                                        "items": []
+                                                    },
+                                                    "method": {
+                                                        "mode": "chose",
+                                                        "label": "POST"
+                                                    },
+                                                    "headers": {
+                                                        "mode": "chose",
+                                                        "items": []
+                                                    },
+                                                    "bodyType": {
+                                                        "label": "Application/x-www-form-urlencoded"
+                                                    },
+                                                    "formFields": {
+                                                        "mode": "chose",
+                                                        "items": [
+                                                            "undefined",
+                                                            "undefined",
+                                                            "undefined"
+                                                        ]
+                                                    }
+                                                },
+                                                "parameters": [
+                                                    {
+                                                        "name": "handleErrors",
+                                                        "type": "boolean",
+                                                        "label": "Evaluate all states as errors (except for 2xx and 3xx )",
+                                                        "required": true
+                                                    }
+                                                ],
+                                                "expect": [
+                                                    {
+                                                        "name": "url",
+                                                        "type": "url",
+                                                        "label": "URL",
+                                                        "required": true
+                                                    },
+                                                    {
+                                                        "name": "method",
+                                                        "type": "select",
+                                                        "label": "Method",
+                                                        "required": true,
+                                                        "validate": {
+                                                            "enum": [
+                                                                "get",
+                                                                "head",
+                                                                "post",
+                                                                "put",
+                                                                "patch",
+                                                                "delete"
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "name": "headers",
+                                                        "spec": [
+                                                            {
+                                                                "name": "name",
+                                                                "type": "text",
+                                                                "label": "Name",
+                                                                "required": true
+                                                            },
+                                                            {
+                                                                "name": "value",
+                                                                "type": "text",
+                                                                "label": "Value"
+                                                            }
+                                                        ],
+                                                        "type": "array",
+                                                        "label": "Headers",
+                                                        "labels": {
+                                                            "add": "Add a header",
+                                                            "edit": "Edit a header"
+                                                        }
+                                                    },
+                                                    {
+                                                        "name": "qs",
+                                                        "spec": [
+                                                            {
+                                                                "name": "name",
+                                                                "type": "text",
+                                                                "label": "Name",
+                                                                "required": true
+                                                            },
+                                                            {
+                                                                "name": "value",
+                                                                "type": "text",
+                                                                "label": "Value"
+                                                            }
+                                                        ],
+                                                        "type": "array",
+                                                        "label": "Query String",
+                                                        "labels": {
+                                                            "add": "Add parameter",
+                                                            "edit": "Edit parameter"
+                                                        }
+                                                    },
+                                                    {
+                                                        "name": "bodyType",
+                                                        "type": "select",
+                                                        "label": "Body type",
+                                                        "validate": {
+                                                            "enum": [
+                                                                "raw",
+                                                                "x_www_form_urlencoded",
+                                                                "multipart_form_data"
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "name": "parseResponse",
+                                                        "type": "boolean",
+                                                        "label": "Parse response",
+                                                        "required": true
+                                                    },
+                                                    {
+                                                        "name": "authUser",
+                                                        "type": "text",
+                                                        "label": "User name"
+                                                    },
+                                                    {
+                                                        "name": "authPass",
+                                                        "type": "password",
+                                                        "label": "Password"
+                                                    },
+                                                    {
+                                                        "name": "timeout",
+                                                        "type": "uinteger",
+                                                        "label": "Timeout",
+                                                        "validate": {
+                                                            "max": 300,
+                                                            "min": 1
+                                                        }
+                                                    },
+                                                    {
+                                                        "name": "shareCookies",
+                                                        "type": "boolean",
+                                                        "label": "Share cookies with other HTTP modules",
+                                                        "required": true
+                                                    },
+                                                    {
+                                                        "name": "ca",
+                                                        "type": "cert",
+                                                        "label": "Self-signed certificate",
+                                                        "multiline": true
+                                                    },
+                                                    {
+                                                        "name": "rejectUnauthorized",
+                                                        "type": "boolean",
+                                                        "label": "Reject connections that are using unverified (self-signed) certificates",
+                                                        "required": true
+                                                    },
+                                                    {
+                                                        "name": "followRedirect",
+                                                        "type": "boolean",
+                                                        "label": "Follow redirect",
+                                                        "required": true
+                                                    },
+                                                    {
+                                                        "name": "useQuerystring",
+                                                        "type": "boolean",
+                                                        "label": "Disable serialization of multiple same query string keys as arrays",
+                                                        "required": true
+                                                    },
+                                                    {
+                                                        "name": "gzip",
+                                                        "type": "boolean",
+                                                        "label": "Request compressed content",
+                                                        "required": true
+                                                    },
+                                                    {
+                                                        "name": "formFields",
+                                                        "spec": [
+                                                            {
+                                                                "name": "key",
+                                                                "type": "text",
+                                                                "label": "Key",
+                                                                "required": true
+                                                            },
+                                                            {
+                                                                "name": "value",
+                                                                "type": "text",
+                                                                "label": "Value"
+                                                            }
+                                                        ],
+                                                        "type": "array",
+                                                        "label": "Fields"
+                                                    },
+                                                    {
+                                                        "name": "followAllRedirects",
+                                                        "type": "boolean",
+                                                        "label": "Follow all redirect",
+                                                        "required": true
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "id": 35,
+                                            "module": "android:SendNotification",
+                                            "version": 1,
+                                            "parameters": {
+                                                "device": 414117
+                                            },
+                                            "mapper": {
+                                                "url": "{{20.attrs.href}}",
+                                                "body": "{{22.statusCode}}\n{{22.data}}",
+                                                "title": "webmention sent to {{20.attrs.href}}",
+                                                "collapsible": false,
+                                                "notification_action": "open_url"
+                                            },
+                                            "metadata": {
+                                                "designer": {
+                                                    "x": 2670,
+                                                    "y": 1186
+                                                },
+                                                "restore": {
+                                                    "device": {
+                                                        "label": "p-motoe5"
+                                                    },
+                                                    "notification_action": {
+                                                        "label": "Open URL"
+                                                    }
+                                                },
+                                                "parameters": [
+                                                    {
+                                                        "name": "device",
+                                                        "type": "device",
+                                                        "label": "Device",
+                                                        "required": true
+                                                    }
+                                                ],
+                                                "expect": [
+                                                    {
+                                                        "name": "title",
+                                                        "type": "text",
+                                                        "label": "Title",
+                                                        "required": true
+                                                    },
+                                                    {
+                                                        "name": "body",
+                                                        "type": "text",
+                                                        "label": "Body"
+                                                    },
+                                                    {
+                                                        "name": "notification_action",
+                                                        "type": "select",
+                                                        "label": "Click action",
+                                                        "validate": {
+                                                            "enum": [
+                                                                "open_url"
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "name": "collapsible",
+                                                        "type": "boolean",
+                                                        "label": "Collapse push notifications",
+                                                        "required": true
+                                                    },
+                                                    {
+                                                        "name": "url",
+                                                        "type": "url",
+                                                        "label": "URL",
+                                                        "required": true
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "flow": [
+                                        {
+                                            "id": 30,
+                                            "module": "http:ActionSendData",
+                                            "version": 3,
+                                            "parameters": {
+                                                "handleErrors": false
+                                            },
+                                            "mapper": {
+                                                "ca": "",
+                                                "qs": [],
+                                                "url": "https://web.archive.org/save/{{20.attrs.href}}",
+                                                "gzip": true,
+                                                "method": "get",
+                                                "headers": [],
+                                                "timeout": "",
+                                                "authPass": "",
+                                                "authUser": "",
+                                                "bodyType": "",
+                                                "shareCookies": false,
+                                                "parseResponse": false,
+                                                "followRedirect": true,
+                                                "useQuerystring": false,
+                                                "followAllRedirects": false,
+                                                "rejectUnauthorized": true
+                                            },
+                                            "metadata": {
+                                                "designer": {
+                                                    "x": 2245,
+                                                    "y": 1462,
+                                                    "name": "save link to archive.org"
+                                                },
+                                                "restore": {
+                                                    "qs": {
+                                                        "mode": "chose",
+                                                        "items": []
+                                                    },
+                                                    "method": {
+                                                        "mode": "chose",
+                                                        "label": "GET"
+                                                    },
+                                                    "headers": {
+                                                        "mode": "chose",
+                                                        "items": []
+                                                    },
+                                                    "bodyType": {
+                                                        "label": ""
+                                                    }
+                                                },
+                                                "parameters": [
+                                                    {
+                                                        "name": "handleErrors",
+                                                        "type": "boolean",
+                                                        "label": "Evaluate all states as errors (except for 2xx and 3xx )",
+                                                        "required": true
+                                                    }
+                                                ],
+                                                "expect": [
+                                                    {
+                                                        "name": "url",
+                                                        "type": "url",
+                                                        "label": "URL",
+                                                        "required": true
+                                                    },
+                                                    {
+                                                        "name": "method",
+                                                        "type": "select",
+                                                        "label": "Method",
+                                                        "required": true,
+                                                        "validate": {
+                                                            "enum": [
+                                                                "get",
+                                                                "head",
+                                                                "post",
+                                                                "put",
+                                                                "patch",
+                                                                "delete"
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "name": "headers",
+                                                        "spec": [
+                                                            {
+                                                                "name": "name",
+                                                                "type": "text",
+                                                                "label": "Name",
+                                                                "required": true
+                                                            },
+                                                            {
+                                                                "name": "value",
+                                                                "type": "text",
+                                                                "label": "Value"
+                                                            }
+                                                        ],
+                                                        "type": "array",
+                                                        "label": "Headers",
+                                                        "labels": {
+                                                            "add": "Add a header",
+                                                            "edit": "Edit a header"
+                                                        }
+                                                    },
+                                                    {
+                                                        "name": "qs",
+                                                        "spec": [
+                                                            {
+                                                                "name": "name",
+                                                                "type": "text",
+                                                                "label": "Name",
+                                                                "required": true
+                                                            },
+                                                            {
+                                                                "name": "value",
+                                                                "type": "text",
+                                                                "label": "Value"
+                                                            }
+                                                        ],
+                                                        "type": "array",
+                                                        "label": "Query String",
+                                                        "labels": {
+                                                            "add": "Add parameter",
+                                                            "edit": "Edit parameter"
+                                                        }
+                                                    },
+                                                    {
+                                                        "name": "bodyType",
+                                                        "type": "select",
+                                                        "label": "Body type",
+                                                        "validate": {
+                                                            "enum": [
+                                                                "raw",
+                                                                "x_www_form_urlencoded",
+                                                                "multipart_form_data"
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "name": "parseResponse",
+                                                        "type": "boolean",
+                                                        "label": "Parse response",
+                                                        "required": true
+                                                    },
+                                                    {
+                                                        "name": "authUser",
+                                                        "type": "text",
+                                                        "label": "User name"
+                                                    },
+                                                    {
+                                                        "name": "authPass",
+                                                        "type": "password",
+                                                        "label": "Password"
+                                                    },
+                                                    {
+                                                        "name": "timeout",
+                                                        "type": "uinteger",
+                                                        "label": "Timeout",
+                                                        "validate": {
+                                                            "max": 300,
+                                                            "min": 1
+                                                        }
+                                                    },
+                                                    {
+                                                        "name": "shareCookies",
+                                                        "type": "boolean",
+                                                        "label": "Share cookies with other HTTP modules",
+                                                        "required": true
+                                                    },
+                                                    {
+                                                        "name": "ca",
+                                                        "type": "cert",
+                                                        "label": "Self-signed certificate",
+                                                        "multiline": true
+                                                    },
+                                                    {
+                                                        "name": "rejectUnauthorized",
+                                                        "type": "boolean",
+                                                        "label": "Reject connections that are using unverified (self-signed) certificates",
+                                                        "required": true
+                                                    },
+                                                    {
+                                                        "name": "followRedirect",
+                                                        "type": "boolean",
+                                                        "label": "Follow redirect",
+                                                        "required": true
+                                                    },
+                                                    {
+                                                        "name": "useQuerystring",
+                                                        "type": "boolean",
+                                                        "label": "Disable serialization of multiple same query string keys as arrays",
+                                                        "required": true
+                                                    },
+                                                    {
+                                                        "name": "gzip",
+                                                        "type": "boolean",
+                                                        "label": "Request compressed content",
+                                                        "required": true
+                                                    },
+                                                    {
+                                                        "name": "followAllRedirects",
+                                                        "type": "boolean",
+                                                        "label": "Follow all redirect",
+                                                        "required": true
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "flow": [
+                        {
+                            "id": 2,
+                            "module": "http:ActionSendData",
+                            "version": 3,
+                            "parameters": {
+                                "handleErrors": false
+                            },
+                            "mapper": {
+                                "ca": "",
+                                "qs": [],
+                                "url": "https://web.archive.org/save/{{1.url}}",
+                                "gzip": true,
+                                "method": "get",
+                                "headers": [],
+                                "timeout": "",
+                                "authPass": "",
+                                "authUser": "",
+                                "bodyType": "",
+                                "shareCookies": false,
+                                "parseResponse": false,
+                                "followRedirect": true,
+                                "useQuerystring": false,
+                                "followAllRedirects": false,
+                                "rejectUnauthorized": true
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 307,
+                                    "y": 1604,
+                                    "name": "save to archive.org"
+                                },
+                                "restore": {
+                                    "qs": {
+                                        "mode": "chose",
+                                        "items": []
+                                    },
+                                    "method": {
+                                        "mode": "chose",
+                                        "label": "GET"
+                                    },
+                                    "headers": {
+                                        "mode": "chose",
+                                        "items": []
+                                    },
+                                    "bodyType": {
+                                        "label": ""
+                                    }
+                                },
+                                "parameters": [
+                                    {
+                                        "name": "handleErrors",
+                                        "type": "boolean",
+                                        "label": "Evaluate all states as errors (except for 2xx and 3xx )",
+                                        "required": true
+                                    }
+                                ],
+                                "expect": [
+                                    {
+                                        "name": "url",
+                                        "type": "url",
+                                        "label": "URL",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "method",
+                                        "type": "select",
+                                        "label": "Method",
+                                        "required": true,
+                                        "validate": {
+                                            "enum": [
+                                                "get",
+                                                "head",
+                                                "post",
+                                                "put",
+                                                "patch",
+                                                "delete"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "headers",
+                                        "spec": [
+                                            {
+                                                "name": "name",
+                                                "type": "text",
+                                                "label": "Name",
+                                                "required": true
+                                            },
+                                            {
+                                                "name": "value",
+                                                "type": "text",
+                                                "label": "Value"
+                                            }
+                                        ],
+                                        "type": "array",
+                                        "label": "Headers",
+                                        "labels": {
+                                            "add": "Add a header",
+                                            "edit": "Edit a header"
+                                        }
+                                    },
+                                    {
+                                        "name": "qs",
+                                        "spec": [
+                                            {
+                                                "name": "name",
+                                                "type": "text",
+                                                "label": "Name",
+                                                "required": true
+                                            },
+                                            {
+                                                "name": "value",
+                                                "type": "text",
+                                                "label": "Value"
+                                            }
+                                        ],
+                                        "type": "array",
+                                        "label": "Query String",
+                                        "labels": {
+                                            "add": "Add parameter",
+                                            "edit": "Edit parameter"
+                                        }
+                                    },
+                                    {
+                                        "name": "bodyType",
+                                        "type": "select",
+                                        "label": "Body type",
+                                        "validate": {
+                                            "enum": [
+                                                "raw",
+                                                "x_www_form_urlencoded",
+                                                "multipart_form_data"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "parseResponse",
+                                        "type": "boolean",
+                                        "label": "Parse response",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "authUser",
+                                        "type": "text",
+                                        "label": "User name"
+                                    },
+                                    {
+                                        "name": "authPass",
+                                        "type": "password",
+                                        "label": "Password"
+                                    },
+                                    {
+                                        "name": "timeout",
+                                        "type": "uinteger",
+                                        "label": "Timeout",
+                                        "validate": {
+                                            "max": 300,
+                                            "min": 1
+                                        }
+                                    },
+                                    {
+                                        "name": "shareCookies",
+                                        "type": "boolean",
+                                        "label": "Share cookies with other HTTP modules",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "ca",
+                                        "type": "cert",
+                                        "label": "Self-signed certificate",
+                                        "multiline": true
+                                    },
+                                    {
+                                        "name": "rejectUnauthorized",
+                                        "type": "boolean",
+                                        "label": "Reject connections that are using unverified (self-signed) certificates",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "followRedirect",
+                                        "type": "boolean",
+                                        "label": "Follow redirect",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "useQuerystring",
+                                        "type": "boolean",
+                                        "label": "Disable serialization of multiple same query string keys as arrays",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "gzip",
+                                        "type": "boolean",
+                                        "label": "Request compressed content",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "followAllRedirects",
+                                        "type": "boolean",
+                                        "label": "Follow all redirect",
+                                        "required": true
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "flow": [
+                        {
+                            "id": 41,
+                            "module": "http:ActionSendData",
+                            "version": 3,
+                            "parameters": {
+                                "handleErrors": false
+                            },
+                            "mapper": {
+                                "ca": "",
+                                "qs": [
+                                    {
+                                        "name": "source",
+                                        "value": "{{1.url}}"
+                                    },
+                                    {
+                                        "name": "target",
+                                        "value": "https://fed.brid.gy/"
+                                    }
+                                ],
+                                "url": "https://fed.brid.gy/webmention",
+                                "gzip": true,
+                                "method": "post",
+                                "headers": [],
+                                "timeout": "",
+                                "authPass": "",
+                                "authUser": "",
+                                "bodyType": "x_www_form_urlencoded",
+                                "formFields": [],
+                                "shareCookies": false,
+                                "parseResponse": false,
+                                "followRedirect": true,
+                                "useQuerystring": false,
+                                "followAllRedirects": false,
+                                "rejectUnauthorized": true
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 634,
+                                    "y": 1476,
+                                    "name": "ping fed.brid.gy"
+                                },
+                                "restore": {
+                                    "qs": {
+                                        "mode": "chose",
+                                        "items": [
+                                            "undefined",
+                                            "undefined"
+                                        ]
+                                    },
+                                    "method": {
+                                        "mode": "chose",
+                                        "label": "POST"
+                                    },
+                                    "headers": {
+                                        "mode": "chose",
+                                        "items": []
+                                    },
+                                    "bodyType": {
+                                        "label": "Application/x-www-form-urlencoded"
+                                    },
+                                    "formFields": {
+                                        "mode": "chose",
+                                        "items": []
+                                    }
+                                },
+                                "parameters": [
+                                    {
+                                        "name": "handleErrors",
+                                        "type": "boolean",
+                                        "label": "Evaluate all states as errors (except for 2xx and 3xx )",
+                                        "required": true
+                                    }
+                                ],
+                                "expect": [
+                                    {
+                                        "name": "url",
+                                        "type": "url",
+                                        "label": "URL",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "method",
+                                        "type": "select",
+                                        "label": "Method",
+                                        "required": true,
+                                        "validate": {
+                                            "enum": [
+                                                "get",
+                                                "head",
+                                                "post",
+                                                "put",
+                                                "patch",
+                                                "delete"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "headers",
+                                        "spec": [
+                                            {
+                                                "name": "name",
+                                                "type": "text",
+                                                "label": "Name",
+                                                "required": true
+                                            },
+                                            {
+                                                "name": "value",
+                                                "type": "text",
+                                                "label": "Value"
+                                            }
+                                        ],
+                                        "type": "array",
+                                        "label": "Headers",
+                                        "labels": {
+                                            "add": "Add a header",
+                                            "edit": "Edit a header"
+                                        }
+                                    },
+                                    {
+                                        "name": "qs",
+                                        "spec": [
+                                            {
+                                                "name": "name",
+                                                "type": "text",
+                                                "label": "Name",
+                                                "required": true
+                                            },
+                                            {
+                                                "name": "value",
+                                                "type": "text",
+                                                "label": "Value"
+                                            }
+                                        ],
+                                        "type": "array",
+                                        "label": "Query String",
+                                        "labels": {
+                                            "add": "Add parameter",
+                                            "edit": "Edit parameter"
+                                        }
+                                    },
+                                    {
+                                        "name": "bodyType",
+                                        "type": "select",
+                                        "label": "Body type",
+                                        "validate": {
+                                            "enum": [
+                                                "raw",
+                                                "x_www_form_urlencoded",
+                                                "multipart_form_data"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "parseResponse",
+                                        "type": "boolean",
+                                        "label": "Parse response",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "authUser",
+                                        "type": "text",
+                                        "label": "User name"
+                                    },
+                                    {
+                                        "name": "authPass",
+                                        "type": "password",
+                                        "label": "Password"
+                                    },
+                                    {
+                                        "name": "timeout",
+                                        "type": "uinteger",
+                                        "label": "Timeout",
+                                        "validate": {
+                                            "max": 300,
+                                            "min": 1
+                                        }
+                                    },
+                                    {
+                                        "name": "shareCookies",
+                                        "type": "boolean",
+                                        "label": "Share cookies with other HTTP modules",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "ca",
+                                        "type": "cert",
+                                        "label": "Self-signed certificate",
+                                        "multiline": true
+                                    },
+                                    {
+                                        "name": "rejectUnauthorized",
+                                        "type": "boolean",
+                                        "label": "Reject connections that are using unverified (self-signed) certificates",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "followRedirect",
+                                        "type": "boolean",
+                                        "label": "Follow redirect",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "useQuerystring",
+                                        "type": "boolean",
+                                        "label": "Disable serialization of multiple same query string keys as arrays",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "gzip",
+                                        "type": "boolean",
+                                        "label": "Request compressed content",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "formFields",
+                                        "spec": [
+                                            {
+                                                "name": "key",
+                                                "type": "text",
+                                                "label": "Key",
+                                                "required": true
+                                            },
+                                            {
+                                                "name": "value",
+                                                "type": "text",
+                                                "label": "Value"
+                                            }
+                                        ],
+                                        "type": "array",
+                                        "label": "Fields"
+                                    },
+                                    {
+                                        "name": "followAllRedirects",
+                                        "type": "boolean",
+                                        "label": "Follow all redirect",
+                                        "required": true
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "flow": [
+                        {
+                            "id": 43,
+                            "module": "http:ActionSendData",
+                            "version": 3,
+                            "parameters": {
+                                "handleErrors": false
+                            },
+                            "mapper": {
+                                "url": "https://petermolnar.superfeedr.com/",
+                                "method": "post",
+                                "headers": [],
+                                "qs": [],
+                                "bodyType": "x_www_form_urlencoded",
+                                "parseResponse": false,
+                                "authUser": "",
+                                "authPass": "",
+                                "timeout": "",
+                                "shareCookies": false,
+                                "ca": "",
+                                "rejectUnauthorized": true,
+                                "followRedirect": true,
+                                "useQuerystring": false,
+                                "gzip": true,
+                                "formFields": [
+                                    {
+                                        "key": "hub.mode",
+                                        "value": "publish"
+                                    },
+                                    {
+                                        "key": "hub.url[]",
+                                        "value": "{{1.url}}"
+                                    },
+                                    {
+                                        "key": "url[]",
+                                        "value": "https://petermolnar.net/feed/index.xml"
+                                    }
+                                ],
+                                "followAllRedirects": false
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": -20,
+                                    "y": 976,
+                                    "name": "superfeedr"
+                                },
+                                "restore": {
+                                    "method": {
+                                        "mode": "chose",
+                                        "label": "POST"
+                                    },
+                                    "headers": {
+                                        "mode": "chose",
+                                        "items": []
+                                    },
+                                    "qs": {
+                                        "mode": "chose",
+                                        "items": []
+                                    },
+                                    "bodyType": {
+                                        "label": "Application/x-www-form-urlencoded"
+                                    },
+                                    "formFields": {
+                                        "mode": "chose",
+                                        "items": [
+                                            "undefined",
+                                            "undefined",
+                                            "undefined"
+                                        ]
+                                    }
+                                },
+                                "parameters": [
+                                    {
+                                        "name": "handleErrors",
+                                        "label": "Evaluate all states as errors (except for 2xx and 3xx )",
+                                        "type": "boolean",
+                                        "required": true
+                                    }
+                                ],
+                                "expect": [
+                                    {
+                                        "name": "url",
+                                        "label": "URL",
+                                        "type": "url",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "method",
+                                        "label": "Method",
+                                        "type": "select",
+                                        "required": true,
+                                        "validate": {
+                                            "enum": [
+                                                "get",
+                                                "head",
+                                                "post",
+                                                "put",
+                                                "patch",
+                                                "delete"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "headers",
+                                        "label": "Headers",
+                                        "type": "array",
+                                        "spec": [
+                                            {
+                                                "name": "name",
+                                                "label": "Name",
+                                                "type": "text",
+                                                "required": true
+                                            },
+                                            {
+                                                "name": "value",
+                                                "label": "Value",
+                                                "type": "text"
+                                            }
+                                        ],
+                                        "labels": {
+                                            "add": "Add a header",
+                                            "edit": "Edit a header"
+                                        }
+                                    },
+                                    {
+                                        "name": "qs",
+                                        "label": "Query String",
+                                        "type": "array",
+                                        "spec": [
+                                            {
+                                                "name": "name",
+                                                "label": "Name",
+                                                "type": "text",
+                                                "required": true
+                                            },
+                                            {
+                                                "name": "value",
+                                                "label": "Value",
+                                                "type": "text"
+                                            }
+                                        ],
+                                        "labels": {
+                                            "add": "Add parameter",
+                                            "edit": "Edit parameter"
+                                        }
+                                    },
+                                    {
+                                        "name": "bodyType",
+                                        "label": "Body type",
+                                        "type": "select",
+                                        "validate": {
+                                            "enum": [
+                                                "raw",
+                                                "x_www_form_urlencoded",
+                                                "multipart_form_data"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "parseResponse",
+                                        "label": "Parse response",
+                                        "type": "boolean",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "authUser",
+                                        "label": "User name",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "name": "authPass",
+                                        "label": "Password",
+                                        "type": "password"
+                                    },
+                                    {
+                                        "name": "timeout",
+                                        "label": "Timeout",
+                                        "type": "uinteger",
+                                        "validate": {
+                                            "max": 300,
+                                            "min": 1
+                                        }
+                                    },
+                                    {
+                                        "name": "shareCookies",
+                                        "label": "Share cookies with other HTTP modules",
+                                        "type": "boolean",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "ca",
+                                        "label": "Self-signed certificate",
+                                        "type": "cert",
+                                        "multiline": true
+                                    },
+                                    {
+                                        "name": "rejectUnauthorized",
+                                        "label": "Reject connections that are using unverified (self-signed) certificates",
+                                        "type": "boolean",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "followRedirect",
+                                        "label": "Follow redirect",
+                                        "type": "boolean",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "useQuerystring",
+                                        "label": "Disable serialization of multiple same query string keys as arrays",
+                                        "type": "boolean",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "gzip",
+                                        "label": "Request compressed content",
+                                        "type": "boolean",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "formFields",
+                                        "label": "Fields",
+                                        "type": "array",
+                                        "spec": [
+                                            {
+                                                "name": "key",
+                                                "label": "Key",
+                                                "type": "text",
+                                                "required": true
+                                            },
+                                            {
+                                                "name": "value",
+                                                "label": "Value",
+                                                "type": "text"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "followAllRedirects",
+                                        "label": "Follow all redirect",
+                                        "type": "boolean",
+                                        "required": true
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "metadata": {
+        "version": 1,
+        "scenario": {
+            "roundtrips": 1,
+            "maxErrors": 3,
+            "autoCommit": false,
+            "sequential": false,
+            "confidential": false,
+            "dataloss": false,
+            "dlq": false
+        },
+        "designer": {
+            "orphans": []
+        },
+        "zone": "eu1.integromat.com"
+    }
+}

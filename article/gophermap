@@ -1,0 +1,767 @@
+Articles - petermolnar.net
+
+
+0Mi az az XMPP, miért jó, és hogyan használd?	/article/xmpp-hu/index.md	petermolnar.net	70
+Az azonnali üzenetküldők egyre gyalázatosabbak a felhasználói érdekek és
+adatvédelem terén, pedig jó ideje lenne lehetőség szabadon választani
+szolgáltatót, programot/felületet, de akár még futtathatnánk is saját
+rendszert.
+Iblabber-telepites-01.png	/article/xmpp-hu/blabber-telepites-01.png	petermolnar.net	70
+Iblabber-telepites-02.png	/article/xmpp-hu/blabber-telepites-02.png	petermolnar.net	70
+Iblabber-telepites-03.png	/article/xmpp-hu/blabber-telepites-03.png	petermolnar.net	70
+Iblabber-telepites-04.png	/article/xmpp-hu/blabber-telepites-04.png	petermolnar.net	70
+Iblabber-telepites-06.png	/article/xmpp-hu/blabber-telepites-06.png	petermolnar.net	70
+Iblabber-telepites-07.png	/article/xmpp-hu/blabber-telepites-07.png	petermolnar.net	70
+Iblabber-telepites-08.png	/article/xmpp-hu/blabber-telepites-08.png	petermolnar.net	70
+Iblabber-telepites-09.png	/article/xmpp-hu/blabber-telepites-09.png	petermolnar.net	70
+Iblabber-telepites-10.png	/article/xmpp-hu/blabber-telepites-10.png	petermolnar.net	70
+Iblabber-telepites-11.png	/article/xmpp-hu/blabber-telepites-11.png	petermolnar.net	70
+Iblabber-telepites-12.png	/article/xmpp-hu/blabber-telepites-12.png	petermolnar.net	70
+Iblabber-telepites-13.png	/article/xmpp-hu/blabber-telepites-13.png	petermolnar.net	70
+Iblabber-telepites-14.png	/article/xmpp-hu/blabber-telepites-14.png	petermolnar.net	70
+Iblabber-telepites-15.png	/article/xmpp-hu/blabber-telepites-15.png	petermolnar.net	70
+Iblabber-telepites-17.png	/article/xmpp-hu/blabber-telepites-17.png	petermolnar.net	70
+Iblabber-telepites-18.png	/article/xmpp-hu/blabber-telepites-18.png	petermolnar.net	70
+Iblabber-telepites-19.png	/article/xmpp-hu/blabber-telepites-19.png	petermolnar.net	70
+Iblabber-telepites-20.png	/article/xmpp-hu/blabber-telepites-20.png	petermolnar.net	70
+Iblabber-telepites-21.png	/article/xmpp-hu/blabber-telepites-21.png	petermolnar.net	70
+Iblabber-telepites-22.png	/article/xmpp-hu/blabber-telepites-22.png	petermolnar.net	70
+Iblabber-telepites-23.png	/article/xmpp-hu/blabber-telepites-23.png	petermolnar.net	70
+Iblabber-telepites-24.png	/article/xmpp-hu/blabber-telepites-24.png	petermolnar.net	70
+Iblabber-telepites-25.png	/article/xmpp-hu/blabber-telepites-25.png	petermolnar.net	70
+Iblabber-telepites-27.png	/article/xmpp-hu/blabber-telepites-27.png	petermolnar.net	70
+Iblabber-telepites-28.png	/article/xmpp-hu/blabber-telepites-28.png	petermolnar.net	70
+Iblabber-telepites-29.png	/article/xmpp-hu/blabber-telepites-29.png	petermolnar.net	70
+Iluadbi-sqlite3.png	/article/xmpp/luadbi-sqlite3.png	petermolnar.net	70
+
+0DIY smart wake up lamp with IKEA, Sonoff D1 Dimmer, and Domoticz	/article/diy-sunrise-lamp/index.md	petermolnar.net	70
+I made a smart wake up lamp, just to see if it is better, than a normal
+alarm clock. It is an insane difference, waking up is so much nicer, and
+subtle, than before, so I recommend doing one.
+Iikea-sangen-sonoff-d1-mod-03.jpg	/article/diy-sunrise-lamp/ikea-sangen-sonoff-d1-mod-03.jpg	petermolnar.net	70
+Iikea-sangen-sonoff-d1-mod-01.jpg	/article/diy-sunrise-lamp/ikea-sangen-sonoff-d1-mod-01.jpg	petermolnar.net	70
+Iikea-sangen-sonoff-d1-mod-05.jpg	/article/diy-sunrise-lamp/ikea-sangen-sonoff-d1-mod-05.jpg	petermolnar.net	70
+Iikea-sangen-sonoff-d1-mod-06.jpg	/article/diy-sunrise-lamp/ikea-sangen-sonoff-d1-mod-06.jpg	petermolnar.net	70
+Iikea-sangen-sonoff-d1-mod-07.jpg	/article/diy-sunrise-lamp/ikea-sangen-sonoff-d1-mod-07.jpg	petermolnar.net	70
+Iikea-sangen-sonoff-d1-mod-02.jpg	/article/diy-sunrise-lamp/ikea-sangen-sonoff-d1-mod-02.jpg	petermolnar.net	70
+Iikea-sangen-sonoff-d1-mod-04.jpg	/article/diy-sunrise-lamp/ikea-sangen-sonoff-d1-mod-04.jpg	petermolnar.net	70
+Idomoticz-hardware.png	/article/diy-sunrise-lamp/domoticz-hardware.png	petermolnar.net	70
+
+0Budget-friendly webcam upgrade: smartphone with DroidcamX over USB	/article/droidcamx/index.md	petermolnar.net	70
+I found a program, called Droidcam, that can turn any Android phone into
+a surprisingly nice webcam over USB, and it works remarkably well even
+on linux.
+Ilenovo-thinkpad-x250-built-in-webcam.jpg	/article/droidcamx/lenovo-thinkpad-x250-built-in-webcam.jpg	petermolnar.net	70
+Idroidcamx-full-hd-with-a-moto-e5.jpg	/article/droidcamx/droidcamx-full-hd-with-a-moto-e5.jpg	petermolnar.net	70
+Iwide-angle-clip-on-lens.jpg	/article/droidcamx/wide-angle-clip-on-lens.jpg	petermolnar.net	70
+Idroidcamx-full-hd-with-a-moto-e5-with-wide-angle-clip-on-lens.jpg	/article/droidcamx/droidcamx-full-hd-with-a-moto-e5-with-wide-angle-clip-on-lens.jpg	petermolnar.net	70
+Imetal-smartphone-mount.jpg	/article/droidcamx/metal-smartphone-mount.jpg	petermolnar.net	70
+
+0Run your artisan instant messaging service for your friends & family	/article/xmpp/index.md	petermolnar.net	70
+Fleeing Whatapp due to their policy changes? Tired of the never ending
+roam between the actual trendy instant messaging app? Here is a simple,
+elegant solution: run your own server, onboard your friends and family,
+and live happily ever after.
+Ipidgin-2020.png	/article/xmpp/pidgin-2020.png	petermolnar.net	70
+Iluadbi-sqlite3.png	/article/xmpp/luadbi-sqlite3.png	petermolnar.net	70
+
+0Excavating my former homepages	/article/content-archeology/index.md	petermolnar.net	70
+Someone, a long time ago came up with the thought that whatever is put
+on the internet, it’ll be there forever. Well, it’s wrong. The old
+versions of my own website, including their design, were long gone, so I
+decided to put the Indiana Jones hat on, and started digging.
+I2002.jpg	/article/content-archeology/2002.jpg	petermolnar.net	70
+I2004.jpg	/article/content-archeology/2004.jpg	petermolnar.net	70
+I2007.jpg	/article/content-archeology/2007.jpg	petermolnar.net	70
+I2010.jpg	/article/content-archeology/2010.jpg	petermolnar.net	70
+I2011.jpg	/article/content-archeology/2011.jpg	petermolnar.net	70
+I2013.jpg	/article/content-archeology/2013.jpg	petermolnar.net	70
+I2014.jpg	/article/content-archeology/2014.jpg	petermolnar.net	70
+I2014-2.jpg	/article/content-archeology/2014-2.jpg	petermolnar.net	70
+I2014-3.jpg	/article/content-archeology/2014-3.jpg	petermolnar.net	70
+Iwindows-xp-themed.png	/article/content-archeology/windows-xp-themed.png	petermolnar.net	70
+I2016.jpg	/article/content-archeology/2016.jpg	petermolnar.net	70
+I2018.jpg	/article/content-archeology/2018.jpg	petermolnar.net	70
+I2019.jpg	/article/content-archeology/2019.jpg	petermolnar.net	70
+
+0Refactoring my static generator	/article/less-features-cleaner-site/index.md	petermolnar.net	70
+Some years ago I decided to walk away from dynamic website in pursuit of
+something that feels a bit more, like the small web, and what’s more
+fault tolerant for the future. Unfortunately my solution overgrew its
+promise so it was time for some reaping.
+
+0Rethinking, downsizing, and revisiting the idea of a home server	/article/home-server-downsizing/index.md	petermolnar.net	70
+Lately I’ve found myself spending way too much time and effort on my
+home server while not solving any of the issues I uncovered. It was time
+to take a step back.
+Iinwin-iw-rf100s-hacks-silen-fan.jpg	/article/home-server-downsizing/inwin-iw-rf100s-hacks-silen-fan.jpg	petermolnar.net	70
+Iinwin-iw-rf100s-hacks-internal-usb3-msata.jpg	/article/home-server-downsizing/inwin-iw-rf100s-hacks-internal-usb3-msata.jpg	petermolnar.net	70
+Iinwin-iw-rf100s-hacks-io-shield.jpg	/article/home-server-downsizing/inwin-iw-rf100s-hacks-io-shield.jpg	petermolnar.net	70
+Ilenovo-thinkcentre-m600-server-front.jpg	/article/home-server-downsizing/lenovo-thinkcentre-m600-server-front.jpg	petermolnar.net	70
+Ilenovo-thinkcentre-m600-server-side.jpg	/article/home-server-downsizing/lenovo-thinkcentre-m600-server-side.jpg	petermolnar.net	70
+Ilenovo-thinkcentre-m600-server-open.jpg	/article/home-server-downsizing/lenovo-thinkcentre-m600-server-open.jpg	petermolnar.net	70
+Ilenovo-thinkcentre-m600-server-inside.jpg	/article/home-server-downsizing/lenovo-thinkcentre-m600-server-inside.jpg	petermolnar.net	70
+Ivirgin-media-hitron-port-fowarding.jpg	/article/home-server-downsizing/virgin-media-hitron-port-fowarding.jpg	petermolnar.net	70
+Ivirgin-media-hitron-lan-setup.jpg	/article/home-server-downsizing/virgin-media-hitron-lan-setup.jpg	petermolnar.net	70
+Ivirgin-media-hitron-wifi-off.jpg	/article/home-server-downsizing/virgin-media-hitron-wifi-off.jpg	petermolnar.net	70
+Ivirgin-media-hitron-wifi5g-off.jpg	/article/home-server-downsizing/virgin-media-hitron-wifi5g-off.jpg	petermolnar.net	70
+Ivirgin-media-hitron-dmz.jpg	/article/home-server-downsizing/virgin-media-hitron-dmz.jpg	petermolnar.net	70
+Ifritzbox-internet-connection-1.jpg	/article/home-server-downsizing/fritzbox-internet-connection-1.jpg	petermolnar.net	70
+Ifritzbox-internet-connection-2.jpg	/article/home-server-downsizing/fritzbox-internet-connection-2.jpg	petermolnar.net	70
+
+0Raspberry Pi 3 as featherweight headless media renderer	/article/lightweight-headless-media-player-raspberry-pi/index.md	petermolnar.net	70
+After years of experimentation with modern media center software I gave
+up. As usual, the simpler, the better, and cleaner, so welcome back MPD
+and VLC, and welcome raspotify.
+Imalp.png	/article/lightweight-headless-media-player-raspberry-pi/malp.png	petermolnar.net	70
+Ivlcfreemote.png	/article/lightweight-headless-media-player-raspberry-pi/vlcfreemote.png	petermolnar.net	70
+Ispotify.png	/article/lightweight-headless-media-player-raspberry-pi/spotify.png	petermolnar.net	70
+Ipulseaudio-dlna.png	/article/lightweight-headless-media-player-raspberry-pi/pulseaudio-dlna.png	petermolnar.net	70
+
+0Consistent USB device naming in a FreeNAS jail	/article/freenas-domoticz-zigbee-zwave-rflink/index.md	petermolnar.net	70
+How to make an Aeotec Z-Wave Z-Stick, a CC2531 Zigbee2MQTT, and an
+RFLink work with a FreeNAS jail running Domoticz
+Idomoticz-freenas-zwave.png	/article/freenas-domoticz-zigbee-zwave-rflink/domoticz-freenas-zwave.png	petermolnar.net	70
+Idomoticz-freenas-rflink.png	/article/freenas-domoticz-zigbee-zwave-rflink/domoticz-freenas-rflink.png	petermolnar.net	70
+Idomoticz-freenas-zigbee.png	/article/freenas-domoticz-zigbee-zwave-rflink/domoticz-freenas-zigbee.png	petermolnar.net	70
+
+0Rebuilding my home server on a tight budget	/article/home-server-2019/index.md	petermolnar.net	70
+For many years I used my former ThinkPads as home servers - built in
+battery, 3G modem, dead silent, sort of too good to be true as a server.
+Unfortunately my storage needs started to outgrow the options, plus my
+RAID0 ZFS decided to die within 2 days of the first alert.
+Iinwin-iw-rf100s.jpg	/article/home-server-2019/inwin-iw-rf100s.jpg	petermolnar.net	70
+
+0Gopher? Gopher.	/article/gopher/index.md	petermolnar.net	70
+Since last weekend, I’m serving my site over gopher as well. Yes, that
+nearly forgotten 90s protocol. And it’s not even an april fools joke.
+Igopher-01.png	/article/gopher/gopher-01.png	petermolnar.net	70
+Igopher-02.png	/article/gopher/gopher-02.png	petermolnar.net	70
+
+0A journey to the underworld that is RDF	/article/web-of-the-machines/index.md	petermolnar.net	70
+I got into an argument on Twitter - it made me realize I don’t know
+enough about RDF to argue about it. Afterwards I tried out a lot of
+different ways to drew my own conclusions on RDF(a), microdata, JSON-LD,
+vocabularies, schema.org, etc. In short: this one does not spark joy.
+Irdf-it-does-not-spark-joy.jpg	/article/web-of-the-machines/rdf-it-does-not-spark-joy.jpg	petermolnar.net	70
+Igsdtt_microdata_error_01.png	/article/web-of-the-machines/gsdtt_microdata_error_01.png	petermolnar.net	70
+Igsdtt_microdata_error_02.png	/article/web-of-the-machines/gsdtt_microdata_error_02.png	petermolnar.net	70
+Igsdtt_rdfa_error_01.png	/article/web-of-the-machines/gsdtt_rdfa_error_01.png	petermolnar.net	70
+Igsdtt_rdfa_error_02.png	/article/web-of-the-machines/gsdtt_rdfa_error_02.png	petermolnar.net	70
+
+0How to add themes to your website with manual and CSS prefers-color-scheme support	/article/os-theme-switcher-css-with-fallback/index.md	petermolnar.net	70
+prefers-color-scheme is a new CSS media query feature, which propagates
+your OS level color preference. While it’s very nice, it’s way too new
+to rely solely on it, so a manual fallback is needed.
+Ipetermolnar-net-light.jpg	/article/os-theme-switcher-css-with-fallback/petermolnar-net-light.jpg	petermolnar.net	70
+
+0Domoticz vs sensors	/article/domoticz-rflink-mqtt/index.md	petermolnar.net	70
+Summary of my experience of adding sensors, and switches to Domoticz
+through MQTT, and RFLink.
+Idomoticz_rflink.jpg	/article/domoticz-rflink-mqtt/domoticz_rflink.jpg	petermolnar.net	70
+Idomoticz_add_mymqtt.jpg	/article/domoticz-rflink-mqtt/domoticz_add_mymqtt.jpg	petermolnar.net	70
+Idomoticz_bme280.jpg	/article/domoticz-rflink-mqtt/domoticz_bme280.jpg	petermolnar.net	70
+
+0GPS tracking without a server	/article/location-tracking-without-server/index.md	petermolnar.net	70
+My pipeline of tracking where I’ve been using and Android phone,
+Backitude, python, and cron
+Iemei.jpg	/article/location-tracking-without-server/emei.jpg	petermolnar.net	70
+
+0The three Facebooks	/article/the-three-facebooks/index.md	petermolnar.net	70
+Facebook offers three different interfaces one can reach it at: desktop,
+mobile, and basic. One of them is a hellhole of torrential bloat.
+Ifacebook_normal.png	/article/the-three-facebooks/facebook_normal.png	petermolnar.net	70
+Ifacebook_normal_js.png	/article/the-three-facebooks/facebook_normal_js.png	petermolnar.net	70
+Ifacebook_m.png	/article/the-three-facebooks/facebook_m.png	petermolnar.net	70
+Ifacebook_mbasic.png	/article/the-three-facebooks/facebook_mbasic.png	petermolnar.net	70
+
+0Lessons of running a (semi) static, Indieweb-friendly site for 2 years	/article/running-a-static-indieweb-site/index.md	petermolnar.net	70
+It’s not possible to run fully static sites with dynamic features, such
+as webmention handling - you can get close to it, but you do need to
+embrace external services.
+
+0Do websites want to force us to use Reader Mode?	/article/do-websites-want-us-to-use-reader-mode/index.md	petermolnar.net	70
+The great unreadability of 2018 made Text secondary to Hyper in
+Hypertext Markup Language. Do publishers really want us to keep reading
+everything in the Reader Mode of the browsers?
+Iunreadability-medium-com.png	/article/do-websites-want-us-to-use-reader-mode/unreadability-medium-com.png	petermolnar.net	70
+Iunreadability-medium-com-js.png	/article/do-websites-want-us-to-use-reader-mode/unreadability-medium-com-js.png	petermolnar.net	70
+Iunreadability-bbc.png	/article/do-websites-want-us-to-use-reader-mode/unreadability-bbc.png	petermolnar.net	70
+Iunreadability-bbc-js.png	/article/do-websites-want-us-to-use-reader-mode/unreadability-bbc-js.png	petermolnar.net	70
+Iunreadability-theguardian.png	/article/do-websites-want-us-to-use-reader-mode/unreadability-theguardian.png	petermolnar.net	70
+Iunreadability-theguardianjavascript.png	/article/do-websites-want-us-to-use-reader-mode/unreadability-theguardianjavascript.png	petermolnar.net	70
+Iunreadability-wikipedia.png	/article/do-websites-want-us-to-use-reader-mode/unreadability-wikipedia.png	petermolnar.net	70
+Iunreadability-lod.png	/article/do-websites-want-us-to-use-reader-mode/unreadability-lod.png	petermolnar.net	70
+Iunreadability-medium-com-firefox.png	/article/do-websites-want-us-to-use-reader-mode/unreadability-medium-com-firefox.png	petermolnar.net	70
+
+0Using I²C sensors on a linux via a USB and IIO	/article/linux-i2c-iio-collectd/index.md	petermolnar.net	70
+A short story of getting a tiny, cheap USB I²C adapter for a home
+server, learning about the Industrial I/O linux subsystem, and
+connecting it to collectd.
+Idigispark-attiny85-bme280-si1145.jpg	/article/linux-i2c-iio-collectd/digispark-attiny85-bme280-si1145.jpg	petermolnar.net	70
+Iiio_bme280_temperature.png	/article/linux-i2c-iio-collectd/iio_bme280_temperature.png	petermolnar.net	70
+Iiio_si1145_light.png	/article/linux-i2c-iio-collectd/iio_si1145_light.png	petermolnar.net	70
+
+0Guide on how to make your website printable with CSS	/article/how-to-make-a-print-css/index.md	petermolnar.net	70
+CSS snippets to consider when you want to provide a printable version of
+your blog
+Icss-print-example-photos.jpg	/article/how-to-make-a-print-css/css-print-example-photos.jpg	petermolnar.net	70
+Icss-print-example-sourcecode.png	/article/how-to-make-a-print-css/css-print-example-sourcecode.png	petermolnar.net	70
+Icss-print-example-urls-before.png	/article/how-to-make-a-print-css/css-print-example-urls-before.png	petermolnar.net	70
+Icss-print-example-urls-after.png	/article/how-to-make-a-print-css/css-print-example-urls-after.png	petermolnar.net	70
+Icss-print-example-opacity.png	/article/how-to-make-a-print-css/css-print-example-opacity.png	petermolnar.net	70
+
+0We are living in instant messenger hell	/article/instant-messenger-hell/index.md	petermolnar.net	70
+I had to install WhatsApp, because some friends are refusing to
+communicate in any other way, which made me realise how tired and
+disillusioned I am when I have to face yet another instant messenger
+network - at least, with some work, Pidgin can still connect to more or
+less everything and anything.
+
+0How to install microG an odexed stock android ROM	/article/odexed-android-6-marshmallow-with-microg/index.md	petermolnar.net	70
+The method of replacing Google Services Framework with microG suite on
+the stock, Android Marshmallow ROM of a Nomu S10
+Inomu_s10_ungoogle_buildnumber.png	/article/odexed-android-6-marshmallow-with-microg/nomu_s10_ungoogle_buildnumber.png	petermolnar.net	70
+Inomu_s10_ungoogle_oemunlock.png	/article/odexed-android-6-marshmallow-with-microg/nomu_s10_ungoogle_oemunlock.png	petermolnar.net	70
+Inomu_s10_ungoogle_fastboot_menu.png	/article/odexed-android-6-marshmallow-with-microg/nomu_s10_ungoogle_fastboot_menu.png	petermolnar.net	70
+Inomu_s10_ungoogle_fastboot_prompt.png	/article/odexed-android-6-marshmallow-with-microg/nomu_s10_ungoogle_fastboot_prompt.png	petermolnar.net	70
+Inomu_s10_ungoogle_xposed.png	/article/odexed-android-6-marshmallow-with-microg/nomu_s10_ungoogle_xposed.png	petermolnar.net	70
+Inomu_s10_ungoogle_fakegapps_xposed.png	/article/odexed-android-6-marshmallow-with-microg/nomu_s10_ungoogle_fakegapps_xposed.png	petermolnar.net	70
+Inomu_s10_ungoogle_microg.png	/article/odexed-android-6-marshmallow-with-microg/nomu_s10_ungoogle_microg.png	petermolnar.net	70
+
+0LinkedIn is ignoring user settings	/article/linkedin-public-settings-ignored/index.md	petermolnar.net	70
+Logged out users are prevented from reaching LinkedIn profiles set to
+complete public visibility
+Ilinkedin-public-profile-issues-authwall.png	/article/linkedin-public-settings-ignored/linkedin-public-profile-issues-authwall.png	petermolnar.net	70
+Ilinkedin-public-profile-issues-settings.png	/article/linkedin-public-settings-ignored/linkedin-public-profile-issues-settings.png	petermolnar.net	70
+
+0Living with a rugged, cheap Chinese Android phone, the Nomu S10	/article/nomu-s10/index.md	petermolnar.net	70
+Cheap, good outdoor phone, with gigantic, but irreplaceable battery,
+waterproof body, very loud speaker. Has no repair options, starts to
+fall apart after a year of use, and might come with a virus
+preinstalled.
+Inomu_s10_back.jpg	/article/nomu-s10/nomu_s10_back.jpg	petermolnar.net	70
+
+0Content, bloat, privacy, archives	/article/making-things-private/index.md	petermolnar.net	70
+I spent a lot of time trying centralising my online activities,
+including adding bookmarks and imports from social networks. Lately my
+site looked bloated and unmaintainable. I started questioning what data
+is my data, what data should or could I own - it was time to rethink
+some ideas.
+Iwhat_is_my_purpose.gif	/article/making-things-private/what_is_my_purpose.gif	petermolnar.net	70
+
+0Headless Spotify Debian linux server fine tunes	/article/headless-spotify-without-gpu/index.md	petermolnar.net	70
+Fine tunes and extras for Vivek Panyam’s guide “How to build a headless
+Spotify Streaming box”
+
+0Self-hosted home SMS gateway	/article/home-sms-gateway-with-mqtt-gammu-thinkpad/index.md	petermolnar.net	70
+How to set up Gammu on an old ThinkPad with a 3G modem and listen for
+MQTT messages to send them as text messages in case your internet is
+down but you still need to alert.
+
+0Environmental sensor logging with Rasbperry Pi, Adafruit BME280 and SI1145, collectd, and mosquitto	/article/raspberry-pi-bme280-si1145-collectd-mosquitto/index.md	petermolnar.net	70
+How to collect, monitor, read, and store pressure, temperature,
+humidity, visible, IR, and UV light data with a Raspberry Pi, an
+Adafruit BME280, Adafruit SI1145, collectd stats collector, and
+mosquitto MQTT.
+Iraspi_sensor_top.jpg	/article/raspberry-pi-bme280-si1145-collectd-mosquitto/raspi_sensor_top.jpg	petermolnar.net	70
+Iraspi_sensors_full.jpg	/article/raspberry-pi-bme280-si1145-collectd-mosquitto/raspi_sensors_full.jpg	petermolnar.net	70
+Iraspi_sensors_bme280_si1145.jpg	/article/raspberry-pi-bme280-si1145-collectd-mosquitto/raspi_sensors_bme280_si1145.jpg	petermolnar.net	70
+
+0Bookmarks, favs, likes - backfilling years of gaps	/article/personal-website-as-archiving-vault/index.md	petermolnar.net	70
+What do you do when you have years of hoarded internet on your computer
+and you want to put them into one place, to make it searchable? You put
+them on your website, while retroactively like, favorite, and bookmark
+them at their source.
+
+0A dirty fix for non-stop drifting Trackpoint	/article/trackpoint-drifting-stop/index.md	petermolnar.net	70
+How to stop Trackpoint from constantly, slowly moving on it’s own under
+linux
+
+0Logging Android sensor data with Automate	/article/android-logging-sensor-data-with-automate/index.md	petermolnar.net	70
+I’ve been searching for a long while for a sensor data logger app; it
+turns out Automate can do this just fine with a lot of extra, so here’s
+my solution for a Galaxy S4.
+Iautomate_sensor_logging_android_01.png	/article/android-logging-sensor-data-with-automate/automate_sensor_logging_android_01.png	petermolnar.net	70
+Iautomate_sensor_logging_android_02.png	/article/android-logging-sensor-data-with-automate/automate_sensor_logging_android_02.png	petermolnar.net	70
+Iautomate_sensor_logging_android_03.png	/article/android-logging-sensor-data-with-automate/automate_sensor_logging_android_03.png	petermolnar.net	70
+Iautomate_sensor_logging_android_04.png	/article/android-logging-sensor-data-with-automate/automate_sensor_logging_android_04.png	petermolnar.net	70
+Iautomate_sensor_logging_android_05.png	/article/android-logging-sensor-data-with-automate/automate_sensor_logging_android_05.png	petermolnar.net	70
+
+0ZFS NFS shares with avahi zeroconf	/article/avahi-nfs-zfs/index.md	petermolnar.net	70
+How to announce ZFS NFS shares on your home network for clients to
+automatically discover them.
+
+0Fix the hard drive killer APM	/article/hard-drive-spindown-clicking-noise/index.md	petermolnar.net	70
+How to spin down hard drive and get rid of the clicking noise in Debian
+9 (Strecth) and Ubuntu 16.04 on a Thinkpad X250
+
+0Save files from Samsung Galaxy S4 with a dead screen with Debian or Ubuntu	/article/save-files-from-a-dead-screen-android/index.md	petermolnar.net	70
+How to download your files and safely destroy personal data from a
+Samsung android phone with a dead screen using heimdall, TWRP, and adb.
+
+0Changing laptops: ThinkPad X200 vs X250, a story of a long postponed upgrade	/article/switcing-from-thinkpad-x200-to-x250/index.md	petermolnar.net	70
+Even though I only owned an X200 for 3 years, the laptop from 2009 was
+becoming aged, no matter how many things I replaced on it, so sadly, it
+was time to look for an alternative.
+Ix250_vs_x200_top.jpg	/article/switcing-from-thinkpad-x200-to-x250/x250_vs_x200_top.jpg	petermolnar.net	70
+Ix250_vs_x200_side.jpg	/article/switcing-from-thinkpad-x200-to-x250/x250_vs_x200_side.jpg	petermolnar.net	70
+Ix250_vs_x200_full.jpg	/article/switcing-from-thinkpad-x200-to-x250/x250_vs_x200_full.jpg	petermolnar.net	70
+Ix250_scars.jpg	/article/switcing-from-thinkpad-x200-to-x250/x250_scars.jpg	petermolnar.net	70
+Ix250_lid_inside.jpg	/article/switcing-from-thinkpad-x200-to-x250/x250_lid_inside.jpg	petermolnar.net	70
+Ix250_display_cable_hook.jpg	/article/switcing-from-thinkpad-x200-to-x250/x250_display_cable_hook.jpg	petermolnar.net	70
+Ix250_m2_ssd.jpg	/article/switcing-from-thinkpad-x200-to-x250/x250_m2_ssd.jpg	petermolnar.net	70
+
+0Replacing Baïkal with Radicale	/article/replacing-baikal-with-radicale-for-carrdav-and-caldav/index.md	petermolnar.net	70
+I was becoming unhappy with Baïkal, my contact and calendar sync server:
+a growing number of clients was unable to use it, so I started to look
+for alternatives. This time I wanted something plain text based.
+
+0How to get rid of 'FastCGI sent in stderr: Primary script unknown' in nginx logs	/article/nginx-no-primary-script-unknown/index.md	petermolnar.net	70
+Add try_files $uri $script_name =404; to your PHP handling block. Click
+more for details
+
+0Going static	/article/going-static/index.md	petermolnar.net	70
+The “why”s for writing one’s own static generator, which I want to
+replace my WordPress with.
+
+0Hacking tint2 panel: weather, CPU temperature and volume executors	/article/hacking-tint2-panel-weather-cpu-temperature-and-volume-executors/index.md	petermolnar.net	70
+Adding weather, volume and CPU status a hacker friendly panel: tint2.
+
+0How to export Flickr to a GPX file to Geotag photos	/article/how-to-export-flickr-to-a-gpx-file-to-geotag-photos/index.md	petermolnar.net	70
+Using Flickr to add GPS metadata to my photos.
+
+0How to send simple UTF-8 email in Python 3.x	/article/not-mime-email-python-3/index.md	petermolnar.net	70
+Apparently, sending email in Python is painful. This is what I did to
+ease it.
+
+0Delete stolen contacts in social networks	/article/delete-stolen-contacts-in-social-networks/index.md	petermolnar.net	70
+How to delete stolen contact lists - address books - from LinkedIn,
+Facebook, and Twitter.
+
+0Automatically reading GPS information from featured image and adding as post meta in WordPress	/article/gps-from-featured-wordpress/index.md	petermolnar.net	70
+Wordpress has a semi-official way of geotagging, so I decided to fill
+this automatically from the featured image.
+
+0My home backup and minimal security system	/article/minimal-backup-and-security/index.md	petermolnar.net	70
+I’ve recently experienced what is it like to have an “uninvited guest”
+in your home while you’re away hiking - hint: it doesn’t feel good.
+Since then I decided to finally put together the things I’ve been
+postponing for months for various reasons - mostly for being lazy.
+
+0motionEyeOS mobile phone presence detection for auto on/off based on network IP or MAC address	/article/motioneyeos-mobile-phone-presence-detection-for-auto-onoff-based-on-network-ip-or-mac-address/index.md	petermolnar.net	70
+I wanted my motionEyeOS system to turn on and off automatically if our
+mobile phones are present on the home network.
+
+0Extending Press This in WordPress to support indieweb reply, like and repost	/article/press-this-indieweb/index.md	petermolnar.net	70
+I’ve been able to reply/like/repost with my site for a long while, but
+is wasn’t elegant, fast or slick at all; it was time to fix it.
+
+0Suppress Slack IRC 'voice' noise in Hexchat	/article/slack-irc-noise-hexchat/index.md	petermolnar.net	70
+I’ve been pushed to use Slack besides our current jabber, but it’s too
+noisy.
+
+0The horror of chat logs	/article/the-horror-of-chat-logs/index.md	petermolnar.net	70
+Can I has normalized, plain text chat logs, please? Starting from 2005,
+from 7 different clients.
+
+0Why I still use email	/article/why-i-keep-using-email/index.md	petermolnar.net	70
+How and why I keep using email.
+
+0Reducing Javascript on petermolnar.eu	/article/reducing_js/index.md	petermolnar.net	70
+Requiring JS to open a menu or to resize images to the viewport is not
+cool.
+
+0Icon fonts should have meaningful unicode mappings to provide fallback	/article/icon-fonts-fallback-unicode/index.md	petermolnar.net	70
+All the icons fonts could potentially have a relatively meaningful,
+fallback Unicode character that would be shown in cases when the font
+does not load for various reasons.
+Iiconissues_forbes.png	/article/icon-fonts-fallback-unicode/iconissues_forbes.png	petermolnar.net	70
+Iiconissues_twitter_wo_icons.png	/article/icon-fonts-fallback-unicode/iconissues_twitter_wo_icons.png	petermolnar.net	70
+Iicon-font.png	/article/icon-fonts-fallback-unicode/icon-font.png	petermolnar.net	70
+
+0Auto setting post format in my WordPress setup	/article/wordpress-post-format-discovery/index.md	petermolnar.net	70
+WordPress with it’s custom taxonomy engine has the Post Format option,
+but it would be much better to do this automatically, wouldn’t it? If me
+as a human can tell the which post is what I just need to translate the
+logic to PHP.
+
+0Getting DKIM, DMARC and SPF to work with Postfix, OpenDKIM and OpenDMARC	/article/howto-spf-dkim-dmarc-postfix/index.md	petermolnar.net	70
+There are plenty of tutorials out there how to get DKIM, SPF, and DMARC
+working, but it still took me a couple of hours to get everything right,
+because each and every one of them lacks something to actually work.
+
+0Spotify: how good is high quality streaming?	/article/spotify-how-good-is-high-quality-streaming/index.md	petermolnar.net	70
+Is there an actual difference between high and normal quality streaming
+on Spotify? How does Spotify high quality streaming compare to CD
+quality?
+Ienigma-tnt_for_the_brain.cdrip-flac.spek.png	/article/spotify-how-good-is-high-quality-streaming/enigma-tnt_for_the_brain.cdrip-flac.spek.png	petermolnar.net	70
+Ienigma-tnt_for_the_brain.cdrip-flac.wave.png	/article/spotify-how-good-is-high-quality-streaming/enigma-tnt_for_the_brain.cdrip-flac.wave.png	petermolnar.net	70
+Ienigma-tnt_for_the_brain.cdrip-mp3.spek.png	/article/spotify-how-good-is-high-quality-streaming/enigma-tnt_for_the_brain.cdrip-mp3.spek.png	petermolnar.net	70
+Ienigma-tnt_for_the_brain.cdrip-mp3.wave.png	/article/spotify-how-good-is-high-quality-streaming/enigma-tnt_for_the_brain.cdrip-mp3.wave.png	petermolnar.net	70
+Ienigma-tnt_for_the_brain.spotify-high.spek.png	/article/spotify-how-good-is-high-quality-streaming/enigma-tnt_for_the_brain.spotify-high.spek.png	petermolnar.net	70
+Ienigma-tnt_for_the_brain.spotify-high.wave.png	/article/spotify-how-good-is-high-quality-streaming/enigma-tnt_for_the_brain.spotify-high.wave.png	petermolnar.net	70
+Ienigma-tnt_for_the_brain.spotify-normal.spek.png	/article/spotify-how-good-is-high-quality-streaming/enigma-tnt_for_the_brain.spotify-normal.spek.png	petermolnar.net	70
+Ienigma-tnt_for_the_brain.spotify-normal.wave.png	/article/spotify-how-good-is-high-quality-streaming/enigma-tnt_for_the_brain.spotify-normal.wave.png	petermolnar.net	70
+
+0Formatted vs unformatted size of filesystems on linux: ext3, ext4, xfs, zfs and reiserfs	/article/why-use-btrfs-for-media-storage/index.md	petermolnar.net	70
+A small comparison of formatted space differences between ext3, ext4,
+xfs, zfs, btrfs, ntfs and reiserfs.
+
+0Why your AC wifi can't reach full speed on 3.13 kernel (Ubuntu 14.04, Mint 17, elementaryOS)	/article/wireless-ac-speed-issues-linux-regulatory-country-code/index.md	petermolnar.net	70
+Less-known depths of wireless: regulations by countries and non-existent
+updates for linux.
+
+0Disable right click blocking in Firefox or Pale Moon	/article/disable-right-click-blocking-in-firefox-pale-moon/index.md	petermolnar.net	70
+Blocked right clicks are annoying.
+
+0How to build an EXIF database to understand your photography	/article/how-to-build-an-exif-database-to-understand-your-photography/index.md	petermolnar.net	70
+Some bits of code to get stats from the EXIF data from your photos.
+
+0Add avatar for not comment type comments in WordPress	/article/add-avatar-for-not-comment-type-comments-in-wordpress/index.md	petermolnar.net	70
+By default only comment type comments get avatars.
+
+0How to make WordPress secure with nginx and fail2ban	/article/secure-wordpress-with-nginx-and-fail2ban/index.md	petermolnar.net	70
+WPScan with Metasploit can easily hack a WordPress site - unless you
+automatically block their access to the PHP level.
+
+0How to use VoIP (SIP) on Android without any app	/article/howto-android-free-internet-call/index.md	petermolnar.net	70
+Android has a built-in SIP client in the Phone app which is much easier
+the use than any additional apps - even though it’s voice only.
+Iandroid_native_voip_01.png	/article/howto-android-free-internet-call/android_native_voip_01.png	petermolnar.net	70
+Iandroid_native_voip_02.png	/article/howto-android-free-internet-call/android_native_voip_02.png	petermolnar.net	70
+Iandroid_native_voip_03.png	/article/howto-android-free-internet-call/android_native_voip_03.png	petermolnar.net	70
+Iandroid_native_voip_04.png	/article/howto-android-free-internet-call/android_native_voip_04.png	petermolnar.net	70
+Iandroid_native_voip_05.png	/article/howto-android-free-internet-call/android_native_voip_05.png	petermolnar.net	70
+Iandroid_native_voip_06.png	/article/howto-android-free-internet-call/android_native_voip_06.png	petermolnar.net	70
+Iandroid_native_voip_07.png	/article/howto-android-free-internet-call/android_native_voip_07.png	petermolnar.net	70
+
+0How block access to original JPG files on WordPress with nginx	/article/how-block-access-to-original-jpg-files-on-wordpress-with-nginx/index.md	petermolnar.net	70
+Block access to non-resized JPG files. Use it with caution.
+
+0Hidden and less hidden RSS feeds on some major social networks	/article/rss-is-still-alive/index.md	petermolnar.net	70
+Examples for RSS feed options of some social sites.
+
+0Reject mails in postfix based on sender domain	/article/postfix-sender-domain-spam/index.md	petermolnar.net	70
+Some bash lines to generate sender checks for postfix.
+
+0Disable Jetpack subscriptions CSS (3.2+)	/article/disable-jetpack-subscriptions-css-3-2/index.md	petermolnar.net	70
+Quickfix for annoying additional CSS from Jetpack.
+
+0How to disable SSLv3 in Firefox to avoid POODLE attack	/article/how-to-disable-sslv3-in-firefox-to-avoid-poodle-attack/index.md	petermolnar.net	70
+Disable SSLv3 in Firefox.
+
+0Lightweight, secure, database-free, spamfiltering mail server with Postfix, Dovecot, openDKIM and dspam on Debian 7	/article/debian-lightweight-mailserver-postfix-dovecot-dspam/index.md	petermolnar.net	70
+Configurations for a light memory use, spamfiltering, secure mailserver
+on linux.
+
+0Monitor specific website with Monit	/article/monitor-specific-website-with-monit/index.md	petermolnar.net	70
+How to: monitor the health of a remote web address with Monit.
+
+0What is an old(ish) Android phone / tablet good for?	/article/reuse-old-android-phone/index.md	petermolnar.net	70
+Old(ish) Android device? Upgrade it, use it as webcam, SMS gw, backup
+server… there’s no need to throw it away.
+
+0WordPress + InnoDB screams for FOREIGN keys	/article/wordpress-innodb-screams-for-foreign-keys/index.md	petermolnar.net	70
+No more orphaned data in WordPress if you add FOREIGN keys to your
+InnoDB database.
+
+0Trimming the fat: THA Big Bad Cleanup of my WordPress	/article/wordpress-cleanup-markdown-import-twitter-import-facebook/index.md	petermolnar.net	70
+THA Big Bad Cleanup of my WordPress: from importing tweets & statuses to
+posting in Markdown.
+
+0WordPress - insert image as Markdown Extra	/article/wordpress-insert-image-as-markdown-extra/index.md	petermolnar.net	70
+WordPress + Markdown are not there yet, hacks needed.
+
+0Alternative for Google Apps on Android - living without Google on Android	/article/living-without-google-on-android-phone/index.md	petermolnar.net	70
+Android without any Google App? What to use instead of Hangouts, Map,
+Gmail? Is that even possible? And why would anyone want to live without
+Google?
+
+0Speeding up WordPress from the backend	/article/speeding-wordpress-backend/index.md	petermolnar.net	70
+Backend ( PHP, MySQL, nginx ) tricks & tips to speed up a WordPress
+setup.
+
+0Optimize your site experience and your image gallery for any device	/article/use-responsive-layout-for-image-galleries/index.md	petermolnar.net	70
+What is the best approach to show images on smartphones & tablets? To
+swipe or not to swipe? How about fluid videos?
+Igallery_mobile.jpg	/article/use-responsive-layout-for-image-galleries/gallery_mobile.jpg	petermolnar.net	70
+Igallery_desktop.jpg	/article/use-responsive-layout-for-image-galleries/gallery_desktop.jpg	petermolnar.net	70
+
+0moving a site to standalone from a WordPress Network	/article/convert-wordpress-network-to-single-blogs/index.md	petermolnar.net	70
+Converting a blog from a WordPress Network to standalone is painful.
+
+0WP-FFPC: speed test	/article/wp-ffpc-speed/index.md	petermolnar.net	70
+WP-FFPC - speeding up your WordPress site at leas 9 times.
+
+0WordPress Jetpack: deactivate any module	/article/jetpack-deactivate-any-module/index.md	petermolnar.net	70
+How to disable any module of JetPack for WordPress.
+
+0Character count for WordPress content and excerpt fields	/article/letter-count-for-wordpress-content-and-excerpt-fields/index.md	petermolnar.net	70
+How to add a simple character counter to excerpt & content fields in
+WordPress.
+
+0logging nginx to rsyslog	/article/log-nginx-to-rsyslog/index.md	petermolnar.net	70
+log nginx to rsyslog without blocking
+
+0Setting up LXC containers with Debian 7 Wheezy from scratch	/article/lxc-on-debian-wheezy/index.md	petermolnar.net	70
+LXC - container based virtualisation from scratch on Debian Wheezy - a
+slightly messy guide to start with
+
+0Monitor disk health with HDSentinel and collectd	/article/monitor-disk-health-hdsentinel-collectd/index.md	petermolnar.net	70
+A little shell script to connect HDSentinel to collectd.
+
+0fail2ban for NAT hosts	/article/fail2ban-nat-hosts/index.md	petermolnar.net	70
+Centralised fail2ban for NAT firewall
+
+0Ramdisk in Debian Wheezy - a.k.a tmpfs	/article/ramdisk-debian-wheezy-k-tmpfs/index.md	petermolnar.net	70
+Use tmpfs instead of /dev/ramX in Debian Wheezy for ram based space.
+
+0Monit web status to JSON with PHP	/article/monit-web-status-to-json-with-php/index.md	petermolnar.net	70
+Show monit status in JSON for other software to understand.
+
+0Adaptive, responsive, pure CSS3, bandwith-saving image gallery for WordPress	/article/adaptive-responsive-css3-gallery/index.md	petermolnar.net	70
+Image gallery for any device, for modern browsers, with nearly pure
+CSS3.
+
+0elementaryOS: customize date & time in wingpanel	/article/elementaryos-customize-date-time-in-wingpanel/index.md	petermolnar.net	70
+Quick hack for elementaryOS time display: use custom format.
+Ielementary_datetime_dconf.png	/article/elementaryos-customize-date-time-in-wingpanel/elementary_datetime_dconf.png	petermolnar.net	70
+Ielementary_datetime_result.png	/article/elementaryos-customize-date-time-in-wingpanel/elementary_datetime_result.png	petermolnar.net	70
+
+0Lightweight resource monitoring with collectd and jarmon	/article/lightweight-system-monitoring-with-collectd-and-jarmon/index.md	petermolnar.net	70
+The neverending story if using less and less resource for a process
+continues: replacing Munin with collectd for system resource memories.
+Ijarmon.png	/article/lightweight-system-monitoring-with-collectd-and-jarmon/jarmon.png	petermolnar.net	70
+
+0How to compile Percona Server with XtraDB 5.5 for ARM ( armhf )	/article/how-to-compile-percona-server-with-xtradb-5-5-for-arm-armhf/index.md	petermolnar.net	70
+To make Percona run on armhf architecture there are only small changes
+need to be applied.
+
+0Add RAM to Ubuntu 12.04+ for free: zRAM	/article/add-ram-to-ubuntu-12-04-for-free-zram/index.md	petermolnar.net	70
+More RAM for free? By installing a software?! Enter zRAM.
+
+0Upstart script for Dropbear SSH server	/article/upstart-script-for-dropbear-ssh-server/index.md	petermolnar.net	70
+A very sleak upstart job script for dropbear.
+
+0Reposition elementaryOS dock (Plank)	/article/elementaryos-plank-position/index.md	petermolnar.net	70
+How to move elementaryOS Luna Plank to different position.
+
+0Solution for: Gtk-WARNING **: Error loading theme icon	/article/solution-for-gtk-warning-error-loading-theme-icon/index.md	petermolnar.net	70
+How to fix Gtk fatal error of PNG images.
+
+0My nginx version update script	/article/nginx-version-update-script/index.md	petermolnar.net	70
+Ever wanted a quick update on your SPDY patched nginx? This is what I
+use.
+
+0trick to "change" CD for wine	/article/trick-wine-cd-change/index.md	petermolnar.net	70
+Need to install something with more than one install CD-s to wine?
+Here’s how.
+
+0Conquer your EXT partition	/article/ext4-reserved-blocks-size/index.md	petermolnar.net	70
+How to get “free” space on EXT filesystem without deleting anything?
+
+0How to move dalvik-cache to /system partition in Android	/article/how-to-move-dalvik-cache-to-system-partition-in-android/index.md	petermolnar.net	70
+Move the dalvik-cache from data partition to system on rooted, S-OFF
+android devices.
+
+0String interchange between C# to and ANSI C DLL	/article/interfacing-c-with-csharp/index.md	petermolnar.net	70
+How to send and receive a string between C# and C.
+
+0How to make Ubuntu 12.04 LTS (Precise Pangolin) usable	/article/how-to-make-ubuntu-12-04-lts-precise-pangolin-usable/index.md	petermolnar.net	70
+Tweaks after install in order to achieve the usability of Linux Mint 10.
+But the new mascot is pretty cute.
+
+0HTC Desire (Bravo): ROMs, updates, pain and suffering	/article/htc-desire-bravo-roms-updates-pain-and-suffering/index.md	petermolnar.net	70
+Replacing the ROM of a HTC Desire; notes for myself if I’d ever want to
+do this again.
+
+0Testing WordPress: the importance of PHP opcode cache	/article/testing-wordpress-the-importance-of-php-opcode-cache/index.md	petermolnar.net	70
+Testing the limits of an nginx and PHP-FPM based WordPress Network with
+and without PHP APC opcode cache running on a really small KVM VPS.
+Iloadimpact_test_plan.png	/article/testing-wordpress-the-importance-of-php-opcode-cache/loadimpact_test_plan.png	petermolnar.net	70
+Iloadimpact_user_scenarios.png	/article/testing-wordpress-the-importance-of-php-opcode-cache/loadimpact_user_scenarios.png	petermolnar.net	70
+Iloadimpact_wo_apc_charts.png	/article/testing-wordpress-the-importance-of-php-opcode-cache/loadimpact_wo_apc_charts.png	petermolnar.net	70
+Iloadimpact_w_apc_charts.png	/article/testing-wordpress-the-importance-of-php-opcode-cache/loadimpact_w_apc_charts.png	petermolnar.net	70
+Iloadimpact_nginx_request.png	/article/testing-wordpress-the-importance-of-php-opcode-cache/loadimpact_nginx_request.png	petermolnar.net	70
+Iloadimpact_ethtraff.png	/article/testing-wordpress-the-importance-of-php-opcode-cache/loadimpact_ethtraff.png	petermolnar.net	70
+Iloadimpact_load.png	/article/testing-wordpress-the-importance-of-php-opcode-cache/loadimpact_load.png	petermolnar.net	70
+
+0How to disable "Waiting up to 60 more seconds for network configuration"	/article/ubuntu-11-10-disable-waiting-up-to-60-more-seconds-for-network-configuration/index.md	petermolnar.net	70
+After upgrading from Ubuntu 11.04 to 11.10 boot hangs for more than one
+minute, waiting for network. Here’s how to solve it the correct way.
+
+0conky with ical	/article/conky-with-ical/index.md	petermolnar.net	70
+Make conky display ical calendars from the web with the help of
+calcurse.
+
+0reduced functionality switch - case in nginx: map module	/article/reduced-functionality-switch-case-in-nginx-map-module/index.md	petermolnar.net	70
+There’s no switch-case in nginx, though map is available for similar but
+reduced functionality cases.
+
+0Hardening iptables with limit rates	/article/hardening-iptables-config-with-limit-rates/index.md	petermolnar.net	70
+How to offload the hard work of blocking brute force to iptables.
+
+0nginx config for a WordPress Network	/article/nginx-config-for-wordpress-network/index.md	petermolnar.net	70
+Easy and clean nginx config for a secure WordPress Network.
+
+0Use OwnCloud CardDAV contacts in RoundCube ( and import .vcf to OwnCloud)	/article/use-owncloud-carddav-contacts-in-roundcube-and-import-vcf-to-owncloud/index.md	petermolnar.net	70
+How to use OwnCloud CardDAV service as address book in RoundCube and how
+to import vcf into OwnCloud.
+
+0Read registry entry string with C code	/article/read-registry-entry-string-with-c-code/index.md	petermolnar.net	70
+Reading a non-fixed-length string from registry with the help of C?
+Here’s how.
+
+0Turn your mailbox into an archieving RSS reader	/article/turn-your-mailbox-into-an-archieving-rss-reader/index.md	petermolnar.net	70
+Most RSS readers lack something: maybe offline version, online version,
+or just managed by someone 3rd party. A simple solution: back to the
+basics with rss2email, turniing the news into email.
+
+0nginx with ownCloud 3	/article/nginx-with-owncloud-3/index.md	petermolnar.net	70
+nginx is one of the best webservers out there, owncloud make cloud
+computing secure using your very own service, but putting them together
+really gave me a headache.
+
+0CSS3 double borders - the two-coloured version	/article/css3-double-borders-the-two-coloured-version/index.md	petermolnar.net	70
+One element, two borders in different colours - (nearly) pure CSS3.
+
+0Loading a function from a DLL from C	/article/loading-a-function-from-a-dll-from-c/index.md	petermolnar.net	70
+Calling functions from a DLL in a C code? Don’t. But it’s possible.
+
+0Cross-browser CSS opacity and rotation with ClearType IE font render bug fixed	/article/ie8-css-filter-matrix-cleartype-font-bug-fix/index.md	petermolnar.net	70
+Really cross-browser CSS opacity or rotation with anti-aliasing even on
+IE? You can do it.
+Iie8-css-screenshot-8.png	/article/ie8-css-filter-matrix-cleartype-font-bug-fix/ie8-css-screenshot-8.png	petermolnar.net	70
+Iie8-css-screenshot-10.png	/article/ie8-css-filter-matrix-cleartype-font-bug-fix/ie8-css-screenshot-10.png	petermolnar.net	70
+Iie8-css-screenshot-4.png	/article/ie8-css-filter-matrix-cleartype-font-bug-fix/ie8-css-screenshot-4.png	petermolnar.net	70
+Iie8-css-screenshot-2.png	/article/ie8-css-filter-matrix-cleartype-font-bug-fix/ie8-css-screenshot-2.png	petermolnar.net	70
+
+0Mail server for a VPS: Postfix, Dovecot, Spamassassin, policyd-weight	/article/mail-server-for-a-vps-postfixdovecotspamassassinclamavpolicyd-weight/index.md	petermolnar.net	70
+Full featured mail server with memory footprint small enough even for a
+VPS, with dovecot, postfix, spamassassin, clamav, policyd-weight with
+all the configs you need.
+
+0owncloud: finally a working webDAV server in PHP	/article/owncloud-finally-a-working-webdav-server-in-php/index.md	petermolnar.net	70
+At last: turn your own server into your private cloud, interfacing any
+webDAV or web-browser capable client - and you only need a webserver
+with PHP!
+
+0Vertically and horizontally fluid CSS layout with height 100%	/article/vertically-and-horizontally-fluid-css-layout-with-height-100/index.md	petermolnar.net	70
+Totally fluid layout both vertically & horizontally with pure CSS, with
+IE6 (!) compatibility.
+
+0Automatically version controlled directory with bazaar on linux	/article/automatically-version-controlled-directory-with-bazaar-on-linux/index.md	petermolnar.net	70
+Dropbox-like file versioning functionality with bazaar VCS and
+inotifywait.
+
+0Photoshop CS5 under linux	/article/photoshop-cs5-under-linux/index.md	petermolnar.net	70
+How to get Photoshop CS5 working on wine.
+
+0CheapVPS.co.uk KVM VPS V1 review	/article/cheapvps-co-uk-kvm-vps-v1-review/index.md	petermolnar.net	70
+Review a small, UK based KVM VPS. Without expectations but with
+surprisingly good results.
+
+0God save position:relative	/article/god-save-positionrelative/index.md	petermolnar.net	70
+How to fix Internet Explorer 8 rotation opacity bug
+
+0weighted average calculator code in C	/article/weighted-average-calculator-code-in-c/index.md	petermolnar.net	70
+A short code to achieve a very fast weighted filter calculator with
+integers, using few resources.
+
+0Dell Latitude E6400 vs. Lenovo Thinkpad T400	/article/dell-latitude-e6400-vs-lenovo-thinkpad-t400/index.md	petermolnar.net	70
+Szubjektív felhasználói élmény és vélemény két premium business gépről.
+Ultrakonzervatív Lenovo Thinkpad T400 vs ultramodern Dell Latitude
+E6400, avagy: Miért nincs megbízható, erős, linuxbarát és szép üzleti
+notebook a piacon?
+Idell_latitude_e6400-left.jpg	/article/dell-latitude-e6400-vs-lenovo-thinkpad-t400/dell_latitude_e6400-left.jpg	petermolnar.net	70
+Idell_latitude_e6400-accessories.jpg	/article/dell-latitude-e6400-vs-lenovo-thinkpad-t400/dell_latitude_e6400-accessories.jpg	petermolnar.net	70
+Ithinkpad_t400.jpg	/article/dell-latitude-e6400-vs-lenovo-thinkpad-t400/thinkpad_t400.jpg	petermolnar.net	70
+Ithinkpad_t60_rollcage.jpg	/article/dell-latitude-e6400-vs-lenovo-thinkpad-t400/thinkpad_t60_rollcage.jpg	petermolnar.net	70
+Ithinkpad_t400_heatsink.jpg	/article/dell-latitude-e6400-vs-lenovo-thinkpad-t400/thinkpad_t400_heatsink.jpg	petermolnar.net	70
+Ithinkpad_t400_blue.jpg	/article/dell-latitude-e6400-vs-lenovo-thinkpad-t400/thinkpad_t400_blue.jpg	petermolnar.net	70
+
+0Minimal Conky with HDD data, nVidia core temperature and Dell fan speed	/article/minimal-conky-with-hdd-data-nvidia-core-temperature-and-dell-fan-speed/index.md	petermolnar.net	70
+Minimal, text-based conky scripts to show a really sophisticated system
+monitor.
+Iconky.png	/article/minimal-conky-with-hdd-data-nvidia-core-temperature-and-dell-fan-speed/conky.png	petermolnar.net	70
+
+0Dell Latitude E6400 and Linux Mint 11 fine tuning	/article/dell-latitude-e6400-and-linux-mint-11-fine-tuning/index.md	petermolnar.net	70
+Tweaking and modifying some “minor” things in Linux Mint 11 for better
+performance and usability on Dell Latitude E6400.
+
+0integer division without divide functionality	/article/integer-division-without-divide-functionality/index.md	petermolnar.net	70
+Division with integers in C, for testing 32 bit max as dividend.
+
+0Ubuntu 10.10 Maverick Meerkat 2.6.38 kernel vs Broadcom STA linux driver	/article/2-6-38-kernel-on-ubuntu-maverick-meerkat-10-10-broadcom-sta-linux-driver/index.md	petermolnar.net	70
+Feel free to install pre-released version of ubuntu kernel into the
+current!
+
+0Better driver for BCM4322 802.11a/b/g/n in Ubuntu 10.10	/article/better-driver-for-bcm4322-802-11abgn-in-ubuntu-10-10/index.md	petermolnar.net	70
+In Ubuntu 10.10, Broadcom driver is old, therefore it’s full of bugs,
+and totally unusable for current cards, like BCM4322. Upgrade it.
+
+0Ubuntu 10.04 ProFTPd with mod_sftp	/article/ubuntu-10-04-proftpd-with-mod_sftp/index.md	petermolnar.net	70
+SFTP enabled FTP: secure, chrooted FTP server.
+
+0apache2-mpm-itk on Ubuntu 10.04 with Virtualmin running PHP 5.3 and PHP 5.2 side-by-side	/article/apache2-mpm-itk-on-ubuntu-10-04-with-virtualmin-running-php-5-3-and-php-5-2-side-by-side/index.md	petermolnar.net	70
+Run PHP 5.2 and 5.3 on the same apache, on a production hosting server,
+with security? Possible, but ugly.
+
+0Simple batch resize & watermark with imagemagick	/article/simple-batch-resize-watermark-with-imagemagick/index.md	petermolnar.net	70
+Fast & simple batch image handling with imagemagick, from the command
+line.
+
+0Hack Netgear WG602 access point to run dd-wrt	/article/hack-netgear-wg602-access-point-to-run-dd-wrt/index.md	petermolnar.net	70
+The basic system of Netgear WG602 is dumb, so get DD-WRT on top of it.
+
+0VMWare ESXi and promiscuous mode	/article/vmware-esxi-and-promiscuous-mode/index.md	petermolnar.net	70
+VMWare ESXi 4.1 vs promiscuous mode
+
+0SSL status check problems with apache behind Pound reverse proxy	/article/ssl-status-check-problems-with-pound-and-apache/index.md	petermolnar.net	70
+Rely on your own HTTP headers, because the built-in ones sometimes get
+lost.
+
+0Installing PHP 5.3 on Ubuntu 9.10 Karmic Koala	/article/installing-php-5-3-on-ubuntu-9-10-karmic-koala/index.md	petermolnar.net	70
+How to get PHP 5.3 on Karmic Koala from dotdeb.
+
+0A usable theme for Ubuntu Desktop: Shiki	/article/a-usable-theme-for-ubuntu-desktop-shiki/index.md	petermolnar.net	70
+I never liked Ubuntu’s Humanity theme, New Wave theme in 9.10 crashes
+some applications, like F-Spot, and both are brown. Now Lucid is about
+to make purple (sic!) it’s default colour, so that’s not for me as well.
+The solution: shiki.
+
+0Changing postfix's incoming smtp port	/article/changing-postfixs-incoming-smtp-port/index.md	petermolnar.net	70
+Which line to change to have Postfix listen on specific ports are well?
+
+0Changing to policyd-weight from postfix's built-in reject_rbl_client	/article/changing-to-policyd-weight-from-postfixs-built-in-reject_rbl_client/index.md	petermolnar.net	70
+Install a weighted RBL daemon for Postfix.
+
+0Quick installing eBox 1.2 with managesieve and custom spam filtering under Ubuntu 8.04	/article/quick-installing-ebox-1-2-with-managesieve-and-custom-spam-filtering-under-ubuntu-8-04/index.md	petermolnar.net	70
+Although eBox has it’s own distribution, I wanted to get it work on
+Ubuntu 8.04 - but the version in the repo is only 1.0, and I really
+needed 1.2.
+
+0Installing apache2-mpm-itk on a Virtualmin based Ubuntu 8.04	/article/installing-apache2-mpm-itk-on-a-virtualmin-based-ubuntu-8-04/index.md	petermolnar.net	70
+A brief writing on installing apache-mpm-itk on Ubuntu 8.04 server.
+
+0Motorola E398	/article/motorola-e398/index.md	petermolnar.net	70
+Nekem tetszik. Bár eddig volt egy belépő, egy közép és egy
+üzleti-jellegű mobilom (Alcatel OT301, Ericsson T29s, Siemens S55),
+nekem ő is tetszik. Tény, hogy néhány PIM funciót hiányolok (rendes
+szinkronizálás Outlookkal, jegyzetek, hangjegyzet), de végül is nem erre
+tervezték. Fiataloknak és zeneőrülteknem szánták, annak pedig tökéletes.
+Imote398_2.jpg	/article/motorola-e398/mote398_2.jpg	petermolnar.net	70
+
+0Siemens S55 vélemény	/article/siemens-s55/index.md	petermolnar.net	70
+Szép (formatervezési díjat nyert), jó, rendkívül okos, de túlságosan
+kicsi. Az üzleti szférát célozták vele, de elfelejtették, hogy az
+üzletember elsősorban telefonál, aztán a többi - arra pedig sokkal
+alkalmasabb pl. a Nokia 6310i, ami a színes kijelzőt és a kamerát
+leszámítva ugyanezeket tudja, csak sokkal kényelmesebb telefonálni vele.
+Isiems55_2.jpg	/article/siemens-s55/siems55_2.jpg	petermolnar.net	70
+
+0Ericsson T29s	/article/ericsson-t29s/index.md	petermolnar.net	70
+Baromira elegem lett abból, hogy mindig, minden oldalon csak reklámok
+vannak, de valódi cuccok nem, hát gondoltam felteszek néhányat saját
+tapasztalatok alapján.

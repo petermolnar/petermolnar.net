@@ -1,0 +1,7 @@
+MIDlet-1: SpruceInvaders, , org.spruce.midp.invaders.InvadersMIDlet
+MIDlet-Info-URL: http://www.spruce.jp/freemidlets
+MIDlet-Jar-Size: 17179
+MIDlet-Jar-URL: SpruceInvaders.jar
+MIDlet-Name: Spruce Invaders
+MIDlet-Vendor: Spruce Technologies
+MIDlet-Version: 1.1

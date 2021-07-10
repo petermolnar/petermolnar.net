@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920" height="1080" version="1.1" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <style>
+            rect {fill: transparent;}
+        </style>
+    </defs>
+    <image width="1920" height="1080" image-rendering="optimizeQuality" preserveAspectRatio="none" xlink:href="wall_with_photos.jpg"/>
+    <a xlink:href="https://petermolnar.net/photo/chengdu-eastern-suburb-memory-5/index.html">
+        <title>Eastern Suburb Memory</title>
+        <rect x="125" y="160" width="264" height="180" />
+    </a>
+    <a xlink:href="https://petermolnar.net/photo/chengdu-anshun-bridge-closeup/index.html">
+        <title>Anshun Bridge, Chengdu (closeup)</title>
+        <rect x="440" y="153" width="264" height="180" />
+    </a>
+    <a xlink:href="https://petermolnar.net/photo/beddgelert/index.html">
+        <title>Beddgelert</title>
+        <rect x="817" y="71.1" width="270" height="147" />
+    </a>
+    <a xlink:href="https://petermolnar.net/photo/huanglong-ponds/index.html">
+        <title>Huanglong</title>
+        <rect x="1210" y="149" width="271" height="184" />
+    </a>
+    <a xlink:href="https://petermolnar.net/photo/lumsdale-falls/index.html">
+        <title>Lumsdale Falls</title>
+        <rect x="1530" y="142" width="191" height="191" />
+    </a>
+    <a xlink:href="https://petermolnar.net/photo/elephant-bathing-pool-xixiangchi-monastery/index.html">
+        <title>Elephant Bathing Pool - Xixiangchi Monastery</title>
+        <rect x="127" y="385" width="265" height="181" />
+    </a>
+    <a xlink:href="https://petermolnar.net/photo/dawn-at-dojo-stara-wies/index.html">
+        <title>Dawn at Dojo Stara Wieś</title>
+        <rect x="438" y="381" width="269" height="174" />
+    </a>
+    <a xlink:href="https://petermolnar.net/photo/fairy-glen/index.html">
+        <title>Fairy Glen</title>
+        <rect x="747" y="265" width="183" height="272" />
+    </a>
+    <a xlink:href="https://petermolnar.net/photo/mount-qingcheng-the-lake-after-the-long-bridge/index.html">
+        <title>The lake on the rear peak of Mount Qingcheng</title>
+        <rect x="975" y="262" width="187" height="276" />
+    </a>
+    <a xlink:href="https://petermolnar.net/photo/hongcun-bridge-2/index.html">
+        <title>Hongcun bridge closeup</title>
+        <rect x="1210" y="376" width="273" height="181" />
+    </a>
+    <a xlink:href="https://petermolnar.net/photo/golden-dragons/index.html">
+        <title>Golden Dragons</title>
+        <rect x="1530" y="381" width="268" height="184" />
+    </a>
+    <a xlink:href="https://petermolnar.net/photo/sichuan-waterfalls-nuorilang-waterfall/index.html">
+        <title>Nuorilang Waterfall in Jiuzhaigou</title>
+        <rect x="19" y="605" width="255" height="175" />
+    </a>
+    <a xlink:href="https://petermolnar.net/photo/la-palma-teneguia-volcano/index.html">
+        <title>La Palma - Teneguía</title>
+        <rect x="327" y="608" width="269" height="92.5" />
+    </a>
+    <a xlink:href="https://petermolnar.net/photo/huangshan-scenery-3/index.html">
+        <title>Huangshan scenery 3</title>
+        <rect x="639" y="576" width="179" height="276" />
+    </a>
+    <a xlink:href="https://petermolnar.net/photo/sichuan-mountains-jiuzhaigou-view/index.html">
+        <title>Sichuan mountains - a view from Jiuzhaigou Primeval Forest</title>
+        <rect x="865" y="581" width="183" height="266" />
+    </a>
+    <a xlink:href="https://petermolnar.net/photo/anlan-bridge/index.html">
+        <title>Anshun Bridge</title>
+        <rect x="1090" y="576" width="184" height="275" />
+    </a>
+    <a xlink:href="https://petermolnar.net/photo/sunrise-hungarian-national-graveyard/index.html">
+        <title>Sunrise - Hungarian National Graveyard</title>
+        <rect x="1320" y="604" width="271" height="185" />
+    </a>
+    <a xlink:href="https://petermolnar.net/photo/jiuzhaigou-peacock-riverbed/index.html">
+        <title>Jiuzhaigou: Peacock Riverbed</title>
+        <rect x="1640" y="604" width="269" height="185" />
+    </a>
+    <a xlink:href="https://petermolnar.net/photo/la-palma-volcano-route-enrique/index.html">
+        <title>La Palma - volcano route next to Enríque</title>
+        <rect x="19" y="826" width="261" height="129" />
+    </a>
+    <a xlink:href="https://petermolnar.net/photo/a-view-from-barbican/index.html">
+        <title>A view from Barbican</title>
+        <rect x="327" y="751" width="271" height="145" />
+    </a>
+    <a xlink:href="https://petermolnar.net/photo/up-in-the-sky-1/index.html">
+        <title>Up in the Sky 1</title>
+        <rect x="666" y="899" width="266" height="113" />
+    </a>
+    <a xlink:href="https://petermolnar.net/photo/hills-from-beachy-head/index.html">
+        <title>Hills from Beachy Head</title>
+        <rect x="984" y="902" width="266" height="113" />
+    </a>
+    <a xlink:href="https://petermolnar.net/photo/snowdonia/index.html">
+        <title>Snowdonia</title>
+        <rect x="1320" y="831" width="264" height="187" />
+    </a>
+    <a xlink:href="https://petermolnar.net/photo/llyn-idwal/index.html">
+        <title>Llyn Idwal</title>
+        <rect x="1640" y="838" width="268" height="147" />
+    </a>
+</svg>

@@ -1,0 +1,237 @@
+body 	{
+	background-image:none;
+	background-color:#424747;
+	color: #333;
+	padding: 0;
+	margin: 0;
+	font-family: Verdana, serif;
+	letter-spacing: 0.05em;
+	font-size: 10px;
+	overflow:auto;
+}
+
+a:link, a:active, a:visited, a:focus {
+	color:#888;
+	text-decoration:underline;
+	outline: none;
+	-moz-outline-style: none;
+}
+	a:hover {
+		text-decoration:none;
+		color:#f90;
+	}
+
+#main_shadowleft, #main_shadowright, .box_bg_left, .box_bg_right, .strip_bg {
+	background-image: none !important;
+}
+
+.grid_cell, .background_color, .editor_button, .editor_helpbox { 
+	background-color: #26272A;
+}
+
+.grid_unmarked, .grid_cell_light, .grid_cell_light_rightopen, .grid_cell_light_leftopen, .grid_cell_light_open, .light, .login, .login2, .error_alert, .quotation_body { 
+	background-color:#16171A;
+	background-image:url('http://petermolnar.eu/design/navmenubg.png');
+	background-repeat:repeat-x;
+	background-position: bottom;
+}
+
+fieldset {
+	border:1px solid #959FAF;
+	background-color:#16171A;
+	background-image:url('http://petermolnar.eu/design/navmenubg.png');
+	background-repeat:repeat-x;
+	background-position: bottom;
+	opacity:0.8;
+	-moz-opacity:0.8;
+	filter:alpha(opacity=80);
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 10px;
+	overflow-x:hidden;
+}
+
+	fieldset.photo {
+		border:1px solid #C73925;
+	}
+
+legend {
+	color: #fff;
+	letter-spacing: 2px;
+	font-weight:bold;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	background-color:#16171A;	
+	border:1px solid #959FAF;
+}
+	fieldset.photo legend {
+		border:1px solid #C73925;
+	}
+
+
+	
+
+input {
+	color: #ccc;
+	background-color: #444;
+	border: 1px solid #666;
+	width: 99%;
+}
+	input:active, input:focus {
+		background-color: #555;
+	}
+
+	input[type="submit"] {
+		width: 80px;
+		margin-top: 10px;
+	}
+
+select {
+	color: #ccc;
+	background-color: #444;
+	border: 1px solid #666;
+	width: 100%;
+}
+	select:active, select:focus {
+		background-color: #555;
+	}
+
+textarea {
+	color: #ccc;
+	background-color: #444;
+	border: 1px solid #666;
+	width: 99%;
+	height: 160px;
+}
+	textarea:active, textarea:focus {
+		background-color: #555;
+	}
+
+label {
+	color: #aaa;
+	text-align:left;
+	float:left;
+	margin-top: 5px;
+}
+
+div.cl {
+	clear:both;
+	height: 0px;
+	font-size:0px;
+	display:block;
+}
+
+.title, .subtitle {
+	color:#f90;
+}
+.subtitle big {
+	color:#fff;
+}
+
+div #main_centerblock table tbody tr td table.background_color tbody tr td.box_bg_right table tbody tr td table tbody tr td table tbody tr td a:link, div #main_centerblock table tbody tr td table.background_color tbody tr td.box_bg_right table tbody tr td table tbody tr td table tbody tr td a:visited, div #main_centerblock table tbody tr td table.background_color tbody tr td.box_bg_right table tbody tr td table tbody tr td table tbody tr td a:active {
+	opacity:0.8;
+	filter:alpha(opacity=80);
+	-moz-opacity:0.8;
+}
+	div #main_centerblock table tbody tr td table.background_color tbody tr td.box_bg_right table tbody tr td table tbody tr td table tbody tr td a:hover {
+		opacity:0.99;
+		filter:alpha(opacity=99);
+		-moz-opacity:0.99;
+	} 
+	
+	div #main_centerblock table tbody tr td table.background_color tbody tr td.box_bg_right table tbody tr td table tbody tr td table tbody tr td a img {
+		border: 1px solid #888;
+	}
+	
+		div #main_centerblock table tbody tr td table.background_color tbody tr td.box_bg_right table tbody tr td table tbody tr td table tbody tr td a:hover img {
+		border: 1px solid #ccc;
+		background-color: #4A1912;
+	}
+
+span.emphasized {
+       color:#fff;
+}
+
+	table.grid tr td i {
+		color:#41494E;	
+	}
+	
+	table.grid tr td a:link, table.grid tr td a:active, table.grid tr td a:visited, table.grid tr td a:focus  {
+		color:#41494E;
+	}
+	
+	table.grid tr td a.emphasized:link, table.grid tr td a.emphasized:active, table.grid tr td a.emphasized:visited, table.grid tr td a.emphasized:focus {
+		color:#888;
+	}
+
+	table.grid tr td a.normalcolor:link, table.grid tr td a.normalcolor:active, table.grid tr td a.normalcolor:visited, table.grid tr td a.normalcolor:focus {
+		
+	}
+		table.grid tr td a.normalcolor:hover {
+		}
+
+ul {
+	list-style-image: none;
+}
+
+div.smallleft p a:link, a.gallery_img:link, div.smallleft p a:visited, a.gallery_img:visited {
+	display: block;   
+	float:left;
+	background-color: #22252C;
+	border:1px solid #111;
+	padding: 2px;
+	margin-left:2px;
+	margin-right:2px;
+	text-align: center; 
+	text-decoration: none;	
+	margin-bottom:10px;
+}
+	div.smallleft p a:hover, a.gallery_img:hover, div.smallleft p a:focus, a.gallery_img:focus, div.smallleft p a:active, a.gallery_img:active {
+		background-color: #444;
+	}
+
+	div.smallleft p a img, a.gallery_img img {
+		border:1px solid #000;
+	}
+
+p.gallery_img_title {
+	clear:both;
+	display:block;
+	margin-bottom:-10px;
+	letter-spacing:2px;
+	font-weight:bold;
+	font-size:90%;
+}	
+
+div.smallleft {
+	width: 235px;
+	float:left;
+}
+
+div.smallright {
+	width: 93px;
+	float:right;
+}
+
+li span, span.csmalltext {
+	font-size:80%; 
+	line-height:12px;
+	color:#777;
+}
+
+li.topmargin {
+	margin-top:10px;
+}
+
+dt {
+	margin-top:15px;
+}
+
+dd {
+	padding:0;
+	margin:0;
+	margin-left: 10px;
+	color:#888;
+}

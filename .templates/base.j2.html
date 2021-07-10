@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html{% block lang %}{% endblock %}>
+<head>
+    <!--[if lt IE 9]>
+        <script src="{{ (site.url ~ "/html5shiv-printshiv.js")|relurl(baseurl) }}"></script>
+    <![endif]-->
+    <title>{% block title %}{% endblock %}</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="{{ site.name }}">
+    <link rel="icon" href="{{ (site.url ~ "/favicon.ico")|relurl(baseurl) }}" />
+    <link rel="webmention" href="https://webmention.io/{{ site.domain }}/webmention" />
+    <link rel="pingback" href="https://webmention.io/{{ site.domain }}/xmlrpc" />
+    <link rel="hub" href="{{ site.hub }}" />
+    <link rel="authorization_endpoint" href="https://indieauth.com/auth" />
+    <link rel="token_endpoint" href="https://tokens.indieauth.com/token" />
+    <link rel="microsub" href="https://aperture.p3k.io/microsub/83" />
+    <link rel="micropub" href="https://petermolnar.net/micropub.php" />
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} RSS feed" href="{{ (site.url ~ "/feed/index.xml")|relurl(baseurl) }}" />
+    <link rel="alternate" type="application/atom+xml" title="{{ site.name }} Atom feed" href="{{ (site.url ~ "/feed/index.xml")|relurl(baseurl) }}" />
+    <link rel="feed" type="text/html" title="{{ site.name }} Microformats feed" href="{{ (site.url ~ "/feed/hfeed.html")|relurl(baseurl) }}" />
+    <link rel="author" title="Peter Molnar" href="mailto:mail@petermolnar.net" />
+{% block meta %}{% endblock %}
+    <style type="text/css" id="css_dark" media="all">
+{% include('dark.css') %}
+    </style>
+    <style type="text/css" id="css_light" media="not all">
+{% include('light.css') %}
+    </style>
+    <style type="text/css" id="css_print" media="print">
+{% include('print.css') %}
+    </style>
+{%block prismcss %}{%endblock%}
+{%block extracss %}{% endblock%}
+</head>
+
+<body>
+
+{% macro activemenu(name) %}
+{% if (post is defined and ( post.category == name or post.entry == name )) %} class="active"{% endif %}
+{% endmacro %}
+
+<div id="header" role="banner">
+    <div>
+        <div class="nav" role="navigation">
+            <ul>
+                <li>
+                    <a title="home" href="{{ (site.url ~ "/")|relurl(baseurl) }}"{{ activemenu('petermolnar.net') }}>
+                        <svg width="16" height="16"><use xlink:href="#icon-home"></use>::</svg>
+                        home
+                    </a>
+                </li>
+                <li>
+                    <a title="photos" href="{{ (site.url ~ "/photo/")|relurl(baseurl) }}"{{ activemenu('photo') }}>
+                        <svg width="16" height="16"><use xlink:href="#icon-photo"></use>::</svg>
+                        photos
+                    </a>
+                </li>
+                <li>
+                    <a title="journal" href="{{ (site.url ~ "/journal/")|relurl(baseurl) }}"{{ activemenu('journal') }}>
+                        <svg width="16" height="16"><use xlink:href="#icon-journal"></use>::</svg>
+                        journal
+                    </a>
+                </li>
+                <li>
+                    <a title="IT" href="{{ (site.url ~ "/article/")|relurl(baseurl) }}"{{ activemenu('article') }}>
+                        <svg width="16" height="16"><use xlink:href="#icon-article"></use>::</svg>
+                        IT
+                    </a>
+                </li>
+                <li>
+                    <a title="notes" href="{{ (site.url ~ "/note/")|relurl(baseurl) }}"{{ activemenu('note') }}>
+                        <svg width="16" height="16"><use xlink:href="#icon-note"></use>::</svg>
+                        notes
+                    </a>
+                </li>
+                <li>
+                    <a title="subscribe" rel="alternate" href="{{ (site.url ~ "/feed/index.xml")|relurl(baseurl) }}">
+                        <svg width="16" height="16"><use xlink:href="#icon-rss"></use>::</svg>
+                        subscribe
+                    </a>
+                </li>
+                <li>
+                    <a title="blogroll" href="{{ (site.url ~ "/subscriptions.opml")|relurl(baseurl) }}">
+                        <svg width="16" height="16"><use xlink:href="#icon-blogroll"></use>::</svg>
+                        blogroll
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div id="header-forms">
+            <form id="search" role="search" method="get" action="{{ site.url }}/search.php">
+                <label for="qsub">
+                    <input type="submit" value="search" id="qsub" name="qsub" />
+                    <svg width="16" height="16">
+                        <use xlink:href="#icon-search"></use>
+                    </svg>
+                </label>
+                <input type="search" placeholder="search..." value="" name="q" id="q" title="Search for:" />
+            </form>
+        </div>
+    </div>
+</div>
+
+{% block content %}{% endblock %}
+
+{% block comments %}{% endblock %}
+
+{% block pagination %}{% endblock %}
+
+
+<div id="footer" role="contentinfo">
+    <p class="p-author h-card vcard" resource="#publisher" vocab="http://schema.org/" typeof="Person">
+        made by
+        <a class="p-name u-url fn url" property="url" href="https://petermolnar.net/" rel="me">
+            <span property="name">Peter Molnar</span>
+        </a>
+        1999 - 2020
+        <img class="u-photo photo" property="image" src="{{ (site.url ~ "/favicon.jpg")|relurl(baseurl) }}" alt="Photo of Peter Molnar" />
+        <a class="u-email email" rel="me" href="mailto:mail@petermolnar.net">
+            <svg width="16" height="16"><use xlink:href="#icon-mail"></use>::</svg>
+            <span property="email">mail@petermolnar.net</span>
+        </a>
+        <br />
+        <a rel="me" property="sameAs" href="https://github.com/petermolnar" title="@petermolnar on Github">
+            <svg width="16" height="16"><use xlink:href="#icon-github"></use>::</svg>
+            github
+        </a>
+        <a rel="me" property="sameAs" href="https://twitter/petermolnar" title="@petermolnar on Twitter">
+            <svg width="16" height="16"><use xlink:href="#icon-twitter"></use>::</svg>
+            twitter
+        </a>
+        <a rel="me" property="sameAs" href="https://www.flickr.com/people/petermolnareu/" title="@petermolnareu on Flickr">
+            <svg width="16" height="16"><use xlink:href="#icon-www.flickr.com"></use>::</svg>
+            flickr
+        </a>
+        <a rel="me" href="https://indieweb.social/@pmlnr">
+            <svg width="16" height="16"><use xlink:href="#icon-mastodon"></use>::</svg>
+            Mastodon
+        </a>
+        <a rel="me" property="sameAs" href="xmpp:mail@petermolnar.net" title="XMPP">
+            <svg width="16" height="16"><use xlink:href="#icon-xmpp"></use>::</svg>
+            XMPP
+        </a>
+        <a rel="me" class="u-key" href="{{ (site.url ~ "/pgp.pub.asc")|relurl(baseurl) }}">
+            <svg width="16" height="16"><use xlink:href="#icon-key"></use>::</svg>
+            PGP
+        </a>
+    </p>
+    <p>
+        <a href="https://xn--sr8hvo.ws/%F0%9F%87%BB%F0%9F%87%AE%F0%9F%93%A2/previous">←</a>
+            Member of <a href="https://xn--sr8hvo.ws">IndieWeb Webring</a>
+        <a href="https://xn--sr8hvo.ws/%F0%9F%87%BB%F0%9F%87%AE%F0%9F%93%A2/next">→</a>
+    </p>
+</div>
+
+<script>
+
+{% include 'themeswitcher.js' %}
+{% include 'konami.js' %}
+
+{%block extrajs %}{% endblock %}
+
+</script>
+
+{% include 'symbols.svg' %}
+
+{% block prism %}{% endblock %}
+
+    </body>
+</html>

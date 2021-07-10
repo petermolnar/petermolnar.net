@@ -1,0 +1,93 @@
+* {
+  background-color: #fff !important;
+}
+
+html, body  {
+  font-size: 9pt;
+  color: #222;
+  letter-spacing: 0;
+  line-height: 1.2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  page-break-after: avoid;
+  color: #222;
+}
+
+h2 {
+  page-break-before : always;
+}
+
+.footnotes hr:before {
+  color: #222;
+}
+
+h3, a, .footnotes a, .h-feed .h-entry, code, pre {
+  border: none;
+}
+
+li, blockquote, figure {
+  page-break-inside: avoid !important;
+}
+
+a {
+  color: #000;
+}
+
+td, th {
+  border: 1pt solid #666;
+}
+
+.footnotes a {
+  display: block;
+  overflow: visible;
+  white-space: normal;
+  overflow:visible;
+  text-overflow:initial;
+}
+
+#header, #footer, video, audio, #syndication, #comments, .footnote-back, .footnote-backref, .footnote-back, .encourage, .noprint, .entry-footer, .footer-divider {
+  display:none !important;
+}
+
+#main sup::before {
+    content: '[^';
+}
+
+code, pre {
+   max-width: 96%;
+   page-break-inside: auto;
+   font-family: "Courier", "Courier New", monospace;
+}
+
+pre {
+  border: 1pt dotted #666;
+  padding: 0.6em;
+}
+
+figure img {
+  max-width: 80vw;
+  outline: none;
+  border: none;
+}
+
+.h-feed .h-entry {
+  page-break-after: always;
+}
+
+.exif {
+  color: #777 !important;;
+  font-size: 8pt;
+}
+
+.exif svg {
+  vertical-align:text-bottom;
+  width: 8pt;
+  height: 8pt;
+}
+
+@page {
+  @bottom-right {
+    content: counter(page) " of " counter(pages);
+  }
+}

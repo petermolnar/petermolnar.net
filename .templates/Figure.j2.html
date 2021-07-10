@@ -1,0 +1,107 @@
+<figure{% if css|length %} class="{{ css }}"{% endif %} property="image" vocab="http://schema.org/" typeof="ImageObject">
+    <span property="name" content="{{ name }}"></span>
+{% if huge is defined %}
+    <a href="{{ huge }}"{% if featured %} class="u-photo u-featured"{% endif %} property="url">
+{% elif href is defined %}
+    <a href="{{ href }}"{% if featured %} class="u-photo u-featured"{% endif %} property="url">
+{% endif %}
+    <picture>
+        {% if huge is defined %}<source media="print" srcset="{{ huge }}">
+        {% elif href is defined %}<source media="print" srcset="{{ href }}">{% endif %}
+        <img src="{{ src }}" property="contentUrl" title="{{ title|escape }}" alt="{{ alt|escape }}" width="{{ width }}" height="{{ height }}" loading="lazy" />
+    </picture>
+{% if href is defined or huge is defined %}
+    </a>
+{% endif %}
+<figcaption>
+{% if license is defined %}
+    <span class="noprint">license:
+        <a rel="license" href="https://spdx.org/licenses/{{ license|upper }}.html">
+        {% for cc in license.lower().replace('-4.0', '').split('-') %}
+            <svg width="16" height="16">
+                <use xlink:href="#icon-cc-{{ cc }}" />
+                {% if cc == 'cc' %}
+                Creative Commons 4.0 International
+                {% elif cc == 'by' %}
+                Attribution
+                {% elif cc == 'nc' %}
+                Non Commercial
+                {% elif cc == 'nd' %}
+                No Derivatives
+                {% endif %}
+            </svg>
+        {% endfor %}
+        </a>
+        <a property="acquireLicensePage" href="{{licensor}}"></a>
+        <a property="license" href="https://spdx.org/licenses/{{ license|upper }}.html"></a>
+    </span>
+{% endif %}
+{% if caption %}
+    <span class="alt" property="caption">{{ caption }}</span>
+{% endif %}
+{% if exif|length %}
+    <dl class="exif">
+{% if exif.camera is defined %}
+        <dt>Camera</dt>
+        <dd>
+            <svg width="16" height="16">
+                <use xlink:href="#icon-camera" />
+            </svg>
+            {{ exif.camera }}
+        </dd>
+{% endif %}
+{% if exif.aperture is defined %}
+        <dt>Aperture</dt>
+        <dd>
+            <svg width="16" height="16">
+                <use xlink:href="#icon-aperture" />
+            </svg>
+            f/{{ exif.aperture }}
+        </dd>
+{% endif %}
+{% if exif.shutter is defined %}
+        <dt>Shutter speed</dt>
+        <dd>
+            <svg width="16" height="16">
+                <use xlink:href="#icon-clock" />
+            </svg>
+            {{ exif.shutter }} sec
+        </dd>
+{% endif %}
+{% if exif.focallength is defined %}
+        <dt>Focal length (as set)</dt>
+        <dd>
+            <svg width="16" height="16">
+                <use xlink:href="#icon-focallength" />
+            </svg>
+            {{ exif.focallength }}
+        </dd>
+{% endif %}
+{% if exif.iso is defined %}
+        <dt>Sensitivity</dt>
+        <dd>
+            <svg width="16" height="16">
+                <use xlink:href="#icon-sensitivity" />
+            </svg>
+            ISO {{ exif.iso }}
+        </dd>
+{% endif %}
+{% if exif.lens is defined %}
+        <dt>Lens</dt>
+        <dd>
+            <svg width="16" height="16">
+                <use xlink:href="#icon-lens" />
+            </svg>
+            {% if exif.lens.url|length > 0 %}
+            <a href="{{ exif.lens.url|trim }}">
+            {% endif %}
+            {{ exif.lens.name|trim }}
+            {% if exif.lens.url|length > 0 %}
+            </a>
+            {% endif %}
+        </dd>
+{% endif %}
+    </dl>
+{% endif %}
+</figcaption>
+</figure>

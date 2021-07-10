@@ -1,0 +1,19 @@
+a.doll_gallery_img:link, a.doll_gallery_img:visited {
+	display: block;   
+	float:left;
+	background-color: #481811;
+	border:1px solid #6E251A;
+	padding: 2px;
+	margin-left:2px;
+	margin-right:2px;
+	text-align: center; 
+	text-decoration: none;	
+	margin-bottom:10px;
+}
+	a.doll_gallery_img:hover, a.doll_gallery_img:focus, a.doll_gallery_img:active {
+		border: 1px solid #B33422;
+	}
+
+	a.doll_gallery_img img {
+		border:1px solid #000;
+	}

@@ -1,0 +1,313 @@
+{% extends "base.j2.html" %}
+
+
+{% block lang %}{%if post.lang is defined %} lang="{{ post.lang }}" {% endif %}{% endblock %}
+
+
+{% block title %}{{ post.title }} - {{ site.name }}{% endblock %}
+
+
+{% block meta %}
+    <meta name="description" content="{{ post.description|e|truncate(255) }}" />
+{% if post.canonical is defined %}
+    <link rel="canonical" href="{{ post.canonical }}" />
+{% else %}
+    <link rel="canonical" href="{{ post.url }}" />
+{% endif %}
+    <link rel="alternate" type="text/plain" href="{{ post.url }}/index.md" />
+{% if post.license %}
+    <link rel="license"  href="https://spdx.org/licenses/{{ license|upper }}.html" />
+{% endif %}
+{% endblock %}
+
+
+{% block prismcss %}
+{% if post.has_code %}
+    <style type="text/css" id="css_syntax" media="all">
+        {{ 'syntax.css'|insertfile() }}
+    </style>
+{% endif %}
+{% endblock %}
+
+
+{% block prism %}
+{% if post.has_code %}
+    <script>
+        {{ 'prism.js'|insertfile() }}
+    </script>
+{% endif %}
+{% endblock %}
+
+{% block extrajs %}
+{% include 'toc.js' %}
+{% endblock %}
+
+
+{% block content %}
+<div id="main" role="main">
+    <article id="article" class="h-entry hentry" vocab="http://schema.org/" typeof="Article" resource="#article" {%if post.lang is defined %}lang="{{ post.lang }}" {% endif %}>
+        <h1 class="p-name entry-title" property="headline">
+            {% if post['in-reply-to'] %}
+            <span>
+                <svg width="16" height="16">
+                    <use xlink:href="#icon-reply" />
+                </svg>
+                <a href="{{ post.url|relurl(baseurl) }}">
+                    RE:
+                </a>
+                <a href="{{ post['in-reply-to'] }}" rel="external" class="u-in-reply-to">
+                    {{ post['in-reply-to'] }}
+                </a>
+            </span>
+            {% else %}
+            <a href="{{ post.url|relurl(baseurl) }}">
+                {{ post.title }}
+            </a>
+            {% endif %}
+        </h1>
+
+        {% if post.image %}
+        {{ post.image.html|relurl(baseurl) }}
+        {% endif %}
+
+        {% if post.summary|length %}
+        <div class="e-summary entry-summary" property="description">
+            {{ post.summary|relurl(baseurl) }}
+        </div>
+        {% endif %}
+
+        {% if '<h2' in post.html and post.category %}
+            <details id="toc" open="open">
+                <summary>
+                    {% if post.lang == "hu" %}
+                    Tartalom
+                    {% else %}
+                    Table of Contents
+                    {% endif %}
+                </summary>
+            </details>
+        {% endif %}
+
+        <div class="e-content entry-content" property="articleBody">
+            {% if post.review %}
+            <details class="h-review hreview" open="open">
+                <summary>
+                {% if post.lang == "hu" %}
+                Értékelés
+                {% else %}
+                Review summary
+                {% endif %}
+                </summary>
+                <p class="p-item item h-product hproduct">
+                    <a href="{{ post.review.url }}" class="p-name u-url fn url">
+                        <span class="p-name">
+                            {% if post.review.brand|length and post.review.model|length %}
+                            <span class="p-brand">{{ post.review.brand }}</span>
+                            <span class="model">{{ post.review.model }}</span>
+                            {% else %}
+                            {{ post.title }}
+                            {% endif %}
+                            {% if post.review.description|length %}
+                            <span class="e-description">{{ post.review.description}}</span>
+                            {% endif %}
+                        </span>
+                    </a>
+                </p>
+                <p class="rating">
+                    <strong class="value p-rating">{{ post.review.rating }}</strong>
+                    {% if post.lang == "hu" %}
+                    pont; maximum:
+                    {% else %}
+                    out of
+                    {% endif %}
+                    <span class="best">{{ post.review.best }}</span>
+                </p>
+                <p class="p-author h-card reviewer vcard">
+                    <img class="u-photo photo" property="image" src="{{ (site.url ~ "/favicon.jpg")|relurl(baseurl) }}" alt="Photo of {{ post.author.name }}" hidden="hidden" />
+                    <a class="p-name u-url fn url" property="url" href="{{ post.author.url }}">
+                        <span property="name">{{ post.author.name }}</span>
+                    </a>
+                    &lt;<a class="u-email email" href="mailto:{{ post.author.email }}"><span property="email">{{ post.author.email }}</span></a>&gt;
+                </p>
+                <p>
+                    <time class="dt-published dtreviewed" datetime="{{ post.published }} ">{{ post.published|printdate }}</time>
+                </p>
+
+                {% if post.review.img %}
+                <figure>
+                    <img src="{{ post.review.img }}" alt="image of {{ post.review.brand }} {{ post.review.model }} {{ post.review.description}}" class="u-featured u-photo" />
+                    {% if post.review.caption %}<figcaption>{{ post.review.caption }}</figcaption>{% endif %}
+                </figure>
+                {% endif %}
+                {% if post.review.summary %}
+                <p class="p-summary summary">
+                    {{ post.review.summary }}
+                </p>
+                {% endif %}
+            </details>
+            {% endif %}
+
+            {{ post.html|relurl(baseurl) }}
+        </div>
+
+        {% if post.has_map %}
+        <details class="map">
+            <summary>Show map</summary>
+            <figure class="h-geo">
+                <a href="https://www.openstreetmap.org/#map=14/{{post.image.exif.latitude}}/{{post.image.exif.longitude}}">
+                    <img src="map.png" width="720" height="480" loading="lazy" alt="map showing the location where the photo '{{post.title|e}}' was taken at" />
+                </a>
+                <figcaption>coordinates:
+                    <a href="geo:{{post.image.exif.latitude}},{{post.image.exif.longitude}}">
+                    <span class="p-latitude">{{post.image.exif.latitude}}</span>,
+                    <span class="p-longitude">{{post.image.exif.longitude}}</span>
+                    </a>
+                </figcaption>
+            </figure>
+        </details>
+        {% endif %}
+
+        <hr class="footer-divider" />
+        <div class="entry-footer">
+            <p>
+            {% if post.lang == "hu" %}
+            Írta
+            {% else %}
+            Created by
+            {% endif %}
+                <span property="publisher" content="{{post.url}}#publisher"></span>
+                <span class="p-author h-card vcard" property="author" vocab="http://schema.org/" typeof="Person">
+                    <img class="u-photo photo" property="image" src="{{ (site.url ~ "/favicon.jpg")|relurl(baseurl) }}" alt="Photo of {{ post.author.name }}" hidden="hidden" />
+                    <a class="p-name u-url fn url" property="url" href="{{ post.author.url }}">
+                        <span property="name">{{ post.author.name }}</span>
+                    </a>
+                    &lt;<a class="u-email email" href="mailto:{{ post.author.email }}"><span property="email">{{ post.author.email }}</span></a>&gt;</span>,
+                {% if post.lang == "hu" %}
+                dátum:
+                {% else %}
+                published at
+                {% endif %}
+                <time datetime="{{ post.published }}" class="dt-published published" property="datePublished">{{ post.published|printdate }}</time>,
+                {% if post.lang == "hu" %}
+                utoljára frissítve:
+                {% else %}
+                last modified at
+                {% endif %}
+                <time datetime="{{ post.updated }}" class="dt-updated updated" property="dateModified">{{ post.updated|printdate }}</time>
+                {% if post.canonical is defined %}
+                , eredeti forrása:
+                {% if post.lang == "hu" %}
+                {% else %}
+                , originally from
+                {% endif %}
+                <a href="{{ post.canonical }}" class="u-repost-of">{{ post.canonical }}</a>
+                {% if post.lang == "hu" %}
+                , mely újra-megosztásra került a következő webcímen:
+                {% else %}
+                , which was reposted at
+                {% endif %}
+                <a class="u-url u-uuid" property="url" href="{{ post.url }}">{{ post.url }}</a>
+                {% else %}
+                {% if post.lang == "hu" %}
+                , a publikáció eredeti elérhetősége:
+                {% else %}
+                , to canonical URL
+                {% endif %}
+                <a class="u-url u-uuid bookmark" property="url" href="{{ post.url }}">{{ post.url }}</a>
+                {% endif %}
+                {% if post.license %}
+                {% if post.lang == "hu" %}
+                ; licenszfeltételek:
+                {% else %}
+                , licensed under
+                {% endif %}
+                <a rel="license" property="license" href="{{ "https://spdx.org/licenses/" ~ post.license|upper ~ ".html" }}" class="u-license">{{ post.license }}</a>
+                {% endif %}
+                .
+            </p>
+
+            <p class="noprint">
+                {% if post.lang == "hu" %}
+                Ha szeretnél válaszolni vagy hozzászólni küldj egy <a href="https://indieweb.org/Webmention">webmention</a>-t vagy
+                <a href="mailto:{{ post.author.email }}?subject=RE:%20{{ post.url }}">írj egy emailt</a>.
+
+                {% else %}
+                If you'd like to respond, send a <a href="https://indieweb.org/Webmention">webmention</a> or
+                <a href="mailto:{{ post.author.email }}?subject=RE:%20{{ post.url }}">reply in an email</a>.
+                {% endif %}
+            </p>
+                {% if post.copies|length %}
+                <div class="noprint" id="syndication">
+                    {% if post.lang == "hu" %}
+                    Ez a bejegyzés oldalakon:
+                    {% else %}
+                    This post elsewhere:
+                    {% endif %}
+                    <ul>
+                    {% for url in post.copies %}
+                        <li>
+                            <a class="u-syndication" property="sameAs" href="{{ url }}">
+                                <svg width="16" height="16">
+                                    <use xlink:href="#icon-{{ url|extractdomain }}"></use>
+                                </svg>
+                                {{ url|extractdomain }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+                {% if post.image %}
+                <a href="https://brid.gy/publish/flickr"></a>
+                {% endif %}
+                <a href="https://brid.gy/publish/mastodon"></a>
+        </div>
+    </article>
+</div>
+{% endblock %}
+
+
+{% block comments %}
+{% if 'post' == post.type and post.comments|length > 0 %}
+<div id="comments" role="section" aria-label="Comments and Responses">
+    <div>
+        <h2>Webmentions
+            <a href="https://indieweb.org/Webmention" title="to the definition of webmentions on indieweb.org">
+                <svg width="16" height="16"><use xlink:href="#icon-help"></use></svg>
+            </a> and Pingbacks
+            <a href="https://en.wikipedia.org/wiki/Pingback" title="to the definition of pingbacks on wikipedia">
+                <svg width="16" height="16"><use xlink:href="#icon-help"></use></svg>
+            </a>
+        </h2>
+        <ol>
+            {% for comment in post.comments %}
+            <li class="h-entry p-comment hentry" vocab="http://schema.org/" typeof="Comment">
+                <span class="p-author h-card vcard" property="author" vocab="http://schema.org/" typeof="Person">
+                    {% if comment.author.url %}
+                    <a class="u-url p-name fn url org" property="url" href="{{ comment.author.url }}">
+                        <span property="name">{{ comment.author.name }}</span>
+                    </a>
+                    {% else %}
+                    <span class="p-name fn" property="name">
+                        {{ comment.author.name }}
+                    </span>
+                    {% endif %}
+                </span>
+                sent a(n)
+                <i>{{ comment.type }}</i>
+                at
+                <time class="dt-published published" property="datePublished" datetime="{{ comment.date }}">
+                    {{ comment.date|printdate }}
+                </time>
+                <br />
+                <a class="u-url" property="sameAs" href="{{ comment.source }}">
+                    {{ comment.source }}
+                </a>
+                <a href="{{ comment.target }}" property="url" class="u-in-reply-to"></a>
+            </li>
+            {% endfor %}
+        </ol>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,53 @@
+{
+    "18.0 mm": [
+        {
+            "name": "AF-S DX Zoom-Nikkor 18-70mm f/3.5-4.5G IF-ED",
+            "url": "https://www.dpreview.com/articles/3506687050/nikon18-70dx",
+            "maxepoch": 1408184340,
+            "camera": [ "NIKON D80" ]
+        }
+    ],
+    "50.0 mm": [
+        {
+            "name": "SMC Pentax-M 50mm F1.7",
+            "url": "https://www.pentaxforums.com/lensreviews/SMC-Pentax-M-50mm-F1.7-Lens.html",
+            "camera": [ "PENTAX K-5 II s"]
+        }
+    ],
+    "85.0 mm": [
+        {
+            "name": "Jupiter-9 MC 85mm f/2 M42",
+            "url": "https://www.pentaxforums.com/userreviews/lzos-jupiter-9-mc-85mm-f-2-m42.html",
+            "maxepoch": 1556569800,
+            "camera": [ "PENTAX K-5 II s", "NIKON D80"]
+        },
+        {
+            "name": "SMC Pentax 85mm F1.8",
+            "url": "https://www.pentaxforums.com/lensreviews/SMC-Pentax-K-85mm-F1.8-Lens.html",
+            "camera": [ "PENTAX K-5 II s" ],
+            "minepoch": 1553817600
+        }
+    ],
+    "135.0 mm": [
+        {
+            "name": "Jupiter 11 135mm F4",
+            "url": "https://www.pentaxforums.com/userreviews/jupiter-11-135mm-f4.html",
+            "maxepoch": 1554244140,
+            "camera": [ "PENTAX K-5 II s", "NIKON D80"]
+        },
+        {
+            "name": "SMC Pentax 135mm F2.5",
+            "url": "https://www.pentaxforums.com/lensreviews/SMC-Pentax-K-135mm-F2.5-Lens.html",
+            "camera": [ "PENTAX K-5 II s" ],
+            "minepoch": 1553170560
+        }
+    ],
+    "210.0 mm": [
+        {
+            "name": "AF Zoom-Nikkor 70-210mm f/4",
+            "url": "http://www.mir.com.my/rb/photography/companies/nikon/nikkoresources/AFNikkor/AF70210mm/index.htm",
+            "maxepoch": 1430336940,
+            "camera": [ "NIKON D80" ]
+        }
+    ]
+}

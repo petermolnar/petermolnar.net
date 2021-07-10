@@ -1,0 +1,126 @@
+{% extends "base.j2.html" %}
+
+{% block title %}{{ post.title }} - {{ site.name }}{% endblock %}
+
+{% block extracss %}
+    {% if post.title == 'Photos' %}
+    <style type="text/css" id="css_gallery" media="not all">
+{% include('gallery.css') %}
+    </style>
+    {% endif %}
+{% endblock %}
+
+{% block extrajs %}
+    {% if post.title == 'Photos' %}
+        {% include('gallery.js') %}
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+{% if post.title == 'Photos' %}
+    <p id="gallery_toggle" aria-hidden="true">
+    </p>
+
+{% endif %}
+
+<div id="main" role="main" class="h-feed hatom">
+    <h1 class="p-name">{{ post.title}}</h1>
+    <a hidden="hidden" class="u-url" href="{{ post.url }}"></a>
+    {% if post.summary|length %}
+    <div class="p-summary ">
+        {{ post.summary|relurl(baseurl) }}
+    </div>
+    {% endif %}
+
+
+{% set year = [0] %}
+{% for subpost in subentries %}
+    {% set _year = year.pop() %}
+    {% if _year != subpost.year %}
+        {% if not loop.first %}
+        </div>
+        {% endif %}
+        <div class="year">
+        <h2>{{ subpost.year }}</h2>
+    {% endif %}
+    {% set _ = year.append(subpost.year)%}
+
+<!-- entry -->
+    <div class="h-entry hentry"{% if subpost.lang %} lang="{{ subpost.lang }}"{% endif %} vocab="http://schema.org/" typeof="Article">
+        <div class="entry-header">
+            <!-- {#
+            {% if subpost.tags|length and post.entry != 'note' %}
+            <span class="p-category">{{ subpost.tags|join(",") }}</span>
+            {% endif %}
+            #} -->
+            <h3 class="p-name entry-title" property="headline">
+                {% if subpost["in-reply-to"] %}
+                    <span>
+                        <svg width="16" height="16"><use xlink:href="#icon-reply" /></svg>
+                        <a href="{{ subpost.url|relurl(baseurl) }}">RE:</a>
+                        <a href="{{ subpost["in-reply-to"] }}" class="u-in-reply-to">{{ subpost["in-reply-to"] }}</a>
+                    </span>
+                {% else %}
+                    <a href="{{ subpost.url|relurl(baseurl) }}">{{ subpost.title }}</a>
+                {% endif %}
+            </h3>
+            <a href="{{ subpost.url }}" class="u-url bookmark" property="url" hidden="hidden"></a>
+        </div>
+
+        {% if subpost.image %}
+        <figure property="image" vocab="http://schema.org/" typeof="ImageObject">
+            {% if subpost.image.license is defined %}
+            <a rel="license" property="license" href="https://spdx.org/licenses/{{ subpost.image.license|upper }}.html"></a>
+            <span property="acquireLicensePage" content="{{ subpost.image.licensor }}"></span>
+            <span property="name" content="{{ subpost.image.name }}"></span>
+            {% endif %}
+            <a href="{{subpost.url|relurl(baseurl)}}" title="{{ subpost.title|escape }}" class="u-photo u-featured" property="url">
+                <img src="{{ subpost.image.src|relurl(baseurl) }}" property="contentUrl" alt="{{ subpost.title|escape }}" loading="lazy" width="{{ subpost.image.width }}" height="{{ subpost.image.height }}" />
+            </a>
+        </figure>
+        {% endif %}
+
+        <div class="e-summary entry-summary" property="description">
+            {% if subpost.summary|length > 0 %}
+                {{ subpost.summary|relurl(baseurl) }}
+            {% else %}
+                {{ subpost.description|relurl(baseurl) }}
+            {% endif %}
+
+            {% if subpost.image or subpost.summary|length > 0 or subpost.html|length > 255 %}
+                <span class="more">
+                    <a href="{{ subpost.url|relurl(baseurl) }}">
+                    {% if subpost.lang == 'hu' %}Tovább »{% else %}Continue »{% endif %}
+                    </a>
+                </span>
+            {% endif %}
+
+        </div>
+
+        <div class="entry-footer" hidden="hidden">
+            Published at
+            <time datetime="{{ subpost.published }}" class="dt-published published" property="datePublished">{{ subpost.published|printdate }}</time>
+            <time datetime="{{ subpost.updated }}" class="dt-updated updated" property="dateModified"></time>
+            by
+            <span class="p-author h-card vcard" property="author" vocab="http://schema.org/" typeof="Person">
+                <img class="u-photo photo" property="image" src="{{ (site.url ~ "/favicon.jpg")|relurl(baseurl) }}" alt="Photo of {{ subpost.author.name }}" />
+                <a class="p-name u-url fn url org" href="{{ subpost.author.url }}">
+                    <span property="name">{{ post.author.name }}</span>
+                </a>
+                <a class="u-email email" href="mailto:{{ subpost.author.email }}">
+                    <span property="email">{{ post.author.email }}</span>
+                </a>
+            </span>
+            <span property="publisher" content="{{subpost.url}}#publisher"></span>
+        </div>
+    </div>
+
+<!-- /entry -->
+
+
+    {% if loop.last %}
+    </div>
+    {% endif %}
+{% endfor %}
+</div>
+{% endblock %}
