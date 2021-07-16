@@ -1050,16 +1050,6 @@ class Entry(MarkdownDoc):
 class SearchDB(object):
     def __init__(self):
         self.fpath = os.path.join(BASEPATH, "search.sqlite")
-
-    @property
-    def mtime(self):
-        if os.path.exists(self.fpath):
-            mtime = int(os.path.getmtime(self.fpath))
-        else:
-            mtime = 0
-        return mtime
-
-    def open(self):
         self.db = sqlite3.connect(self.fpath)
         self.db.execute("PRAGMA auto_vacuum = INCREMENTAL;")
         self.db.execute("PRAGMA journal_mode = MEMORY;")
@@ -1072,34 +1062,42 @@ class SearchDB(object):
             CREATE VIRTUAL TABLE IF NOT EXISTS data USING fts4(
                 url,
                 mtime,
-                name,
                 title,
-                category,
                 content,
                 summary,
                 featuredimg,
-                notindexed=category,
+                category,
                 notindexed=url,
                 notindexed=mtime,
+                notindexed=title,
                 notindexed=featuredimg,
+                notindexed=category,
                 tokenize=porter
             )"""
         )
+
+    @property
+    def mtime(self):
+        if os.path.exists(self.fpath):
+            mtime = int(os.path.getmtime(self.fpath))
+        else:
+            mtime = 0
+        return mtime
 
     def __exit__(self):
         self.db.commit()
         self.db.execute("PRAGMA auto_vacuum;")
         self.db.close()
 
-    # def append(self, posturl, mtime, name, title, category, content):
     def append(self, post):
         existing_mtime = 0
         exists = False
         maybe = self.db.execute(
-            "SELECT mtime FROM data WHERE name = ?", (post.entry,)
+            "SELECT mtime FROM data WHERE url = ?", (post.url,)
         ).fetchone()
         if maybe and int(maybe[0]) < post.mtime:
-            self.db.execute("DELETE FROM data WHERE name=?", (post.entry,))
+            LOGGER.info(f"{post.url} needs updating in search, deleting previous entry")
+            self.db.execute("DELETE FROM data WHERE url=?", (post.url,))
         elif maybe and int(maybe[0]) >= post.mtime:
             exists = True
 
@@ -1108,21 +1106,23 @@ class SearchDB(object):
         else:
             featuredimg = ""
 
+        corpus = "\n".join([post.title, post.url, post.description, post.txt, featuredimg])
+
         if not exists:
+            LOGGER.info(f"updating search with {post.url}")
             self.db.execute(
                 """
-                INSERT INTO data (url, mtime, name, title, category, content, summary, featuredimg)
-                VALUES (?,?,?,?,?,?,?,?);
+                INSERT INTO data (url, mtime, title, content, summary, featuredimg, category)
+                VALUES (?,?,?,?,?,?,?);
             """,
                 (
                     post.url,
                     post.mtime,
-                    post.entry,
-                    post.meta.get("title", ""),
-                    post.category,
-                    post.txt,
+                    post.title,
+                    corpus,
                     post.description,
                     featuredimg,
+                    post.category,
                 ),
             )
             self.is_changed = True
@@ -1506,10 +1506,6 @@ def run():
     # select which posts can go into the feed(s)
     # populate search, if needed
     search = SearchDB()
-    search_on = False
-    if freshest_mtime > search.mtime:
-        search_on = True
-        search.open()
 
     for mtime, post in everything.items():
         if "post" != post.type:
@@ -1542,11 +1538,9 @@ def run():
         else:
             feed[post_ts] = post
 
-        if search_on:
-            search.append(post)
+        search.append(post)
 
-    if search_on:
-        search.__exit__()
+    search.__exit__()
 
     # render
     for post in everything.values():
