@@ -140,6 +140,7 @@ a:visited {
 }
 
 #main {
+  padding: 0.6em;
   margin: 0 auto;
   max-width: 56em;
   line-height: 1.6;
@@ -153,6 +154,16 @@ dd {
 
 dt {
     font-weight: bold;
+}
+
+img {
+  display: block;
+  max-height: 98vh;
+  max-width: 100%;
+  width:auto;
+  height:auto;
+  margin: 0 auto;
+  border: 1px solid #000;
 }
 
     </style>
